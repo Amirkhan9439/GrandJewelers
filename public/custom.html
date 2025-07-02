@@ -1,0 +1,2374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <title>Grand Jewelers</title>
+  <style>
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+       overflow-x: hidden;
+      
+  
+    }
+
+.full-image-section {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.full-background-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.navsbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(rgba(255, 255, 255, 0.94) 0%, rgba(189, 188, 187, 0.33) 73%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 0.517525px 2.58762px -0.625px rgba(0, 0, 0, 0.06),
+                0 1.56943px 7.84714px -1.25px rgba(0, 0, 0, 0.06),
+                0 4.14872px 20.7436px -1.875px rgba(0, 0, 0, 0.06),
+                0 13px 65px -2.5px rgba(0, 0, 0, 0.06);
+    padding: 20px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.logos-image {
+    width: 78px;
+    height: 78px;
+    object-fit: cover;
+}
+
+.logos-text {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 37px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.navs-icons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.navs-icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.navs-links {
+    list-style: none;
+    display: flex;
+    gap: 60px;
+    margin: 20px 0 0 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.navs-item {
+    font-family: "Outfit", "Outfit Placeholder", sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 2em;
+    color: rgb(68, 68, 68);
+    text-decoration: none;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.navs-item:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.content {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    z-index: 10;
+}
+
+.main-heading {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 42px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: rgb(250, 249, 247);
+}
+
+.highlights {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 42px;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(0, 0, 0);
+}
+
+.shop-buttons {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border: none;
+    font-family: "Outfit", "Outfit Placeholder", sans-serif;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 150px;
+    height: 55px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.shop-buttons::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgb(168, 121, 53);
+    transform: translateX(-50%);
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    z-index: -1;
+}
+
+.shop-buttons:hover::before {
+    width: 200%;
+    height: 200%;
+    bottom: -50%;
+}
+
+/* Engagement Rings Hover Container */
+.engagement-container {
+    display: none;
+    position: absolute;
+    width: 285px;
+    height: 195px;
+    background-color: var(--token-3ee5b690-c0bb-49a1-b890-e023ee4070ef, rgb(250, 249, 247));
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    opacity: 1;
+    z-index: 1000;
+    top: calc(100% + 5px);
+    left: 18%;
+    padding: 10px;
+}
+
+.navs-item[href="#"]:nth-child(1):hover + .engagement-container {
+    display: block;
+}
+
+.engagement-container h3 {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    line-height: 1.2em;
+    text-align: left;
+    color: #000000;
+    margin: 0 0 10px 10px;
+}
+
+.engagement-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.engagement-column {
+    flex: 1;
+}
+
+.engagement-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.engagement-item svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-image: url('https://framerusercontent.com/images/dDUgJERkQxFipFZLHZqS9aQFC8.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.engagement-item span {
+    font-family: "Outfit", "Outfit Placeholder", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.5em;
+    text-align: left;
+    color: var(--extracted-r6o4lv, var(--token-059802a5-8ff4-4818-b1a2-de7ee479bdb8, rgb(89, 89, 89)));
+}
+
+.engagement-item span:hover {
+    color: var(--extracted-r6o4lv, var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53)));
+}
+
+/* Wedding Rings Hover Container */
+.wedding-container {
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 195px;
+    background-color: var(--token-3ee5b690-c0bb-49a1-b890-e023ee4070ef, rgb(250, 249, 247));
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    opacity: 1;
+    z-index: 1000;
+    top: calc(100% + 5px);
+    left: 0;
+    
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown:hover .wedding-container {
+    display: block;
+}
+
+.wedding-container h3 {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    line-height: 1.2em;
+    text-align: center;
+    color: #000000;
+    margin: 0 0 10px 0;
+}
+
+.jewelry-column {
+    margin-top: 10px;
+}
+
+.jewelry-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.jewelry-item svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-image: url('https://framerusercontent.com/images/dDUgJERkQxFipFZLHZqS9aQFC8.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.jewelry-item span {
+    font-family: "Outfit", "Outfit Placeholder", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.5em;
+    text-align: left;
+    color: var(--extracted-r6o4lv, var(--token-059802a5-8ff4-4818-b1a2-de7ee479bdb8, rgb(89, 89, 89)));
+}
+
+.jewelry-item span:hover {
+    color: var(--extracted-r6o4lv, var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53)));
+}
+
+/* Jewelry Hover Container */
+.jewelry-container {
+    display: none;
+    position: absolute;
+    width: 220px;
+    height: 195px;
+    background-color: var(--token-3ee5b690-c0bb-49a1-b890-e023ee4070ef, rgb(250, 249, 247));
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    opacity: 1;
+    z-index: 1000;
+    top: calc(100% + 5px);
+    left: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown:hover .jewelry-container {
+    display: block;
+}
+
+.jewelry-container h3 {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0em;
+    line-height: 1.2em;
+    text-align: center;
+    color: #000000;
+    margin: 0 0 10px 0;
+}
+
+/* Search Icon Click */
+.search-input {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    width: 150px;
+    height: 24px;
+    background-color: white;
+    border: none;
+    padding: 0 10px;
+}
+
+.navs-icon:nth-child(1):active ~ .search-input {
+    display: block;
+}
+
+/* User Icon Hover */
+.user-container {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    z-index: 1000;
+}
+
+.navs-icon:nth-child(2):hover + .user-container {
+    display: block;
+}
+
+.user-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Design for Smaller Devices */
+@media (max-width: 768px) {
+    .full-image-section {
+        height: 800px;
+        position: relative;
+    }
+
+    .navsbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .logos {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .logos-image {
+        width: 25px;
+        height: 25px;
+    }
+
+    .logos-text {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .navs-icons {
+        top: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+
+    .navs-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .search-input {
+        top: 15px;
+        right: 50px;
+        width: 100px;
+        height: 20px;
+    }
+
+    .navs-links, .menu-toggle, .user-container {
+        display: none;
+    }
+
+    .content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        text-align: center;
+        z-index: 10;
+     
+    }
+
+    .main-heading {
+        font-size: 30px;
+        max-width:600px;
+    }
+
+    .highlights {
+        font-size: 25px;
+    }
+
+    .shop-buttons {
+        width: 120px;
+        height: 45px;
+        margin: 10px auto;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .shop-buttons::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: rgb(168, 121, 53);
+        transform: translateX(-50%);
+        transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+        z-index: -1;
+    }
+
+    .shop-buttons:hover::before {
+        width: 200%;
+        height: 200%;
+        bottom: -50%;
+    }
+}
+  
+
+  
+
+
+
+
+
+  
+  
+        .category {
+            width: 100vw;
+            height: 830px;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: flex-start;
+            padding: 60px 5% 0 5%;
+            box-sizing: border-box;
+            background-color: #faf9f7;
+            position: relative;
+            overflow: hidden;
+        }
+
+      
+  .category.in-view {
+      animation: slideInFromTop 1s ease-out forwards;
+    }
+
+    @keyframes slideInFromTop {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .category-text {
+      text-align: left;
+      margin: 0;
+    }
+
+    .category-heading {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 50px;
+      line-height: 1.2em;
+      letter-spacing: -2px;
+      font-weight: 300;
+      color: #000000;
+      margin: 0;
+    }
+
+    .category-heading .italic {
+      font-style: italic;
+      margin-left:10px;
+      margin-right:10px;
+    }
+
+    .category-subtitle {
+      font-family: "Outfit", sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: #828282;
+      letter-spacing: -0.02em;
+      line-height: 1.4em;
+      margin-top: 10px;
+    }
+
+    .category-images {
+      display: flex;
+      flex-wrap: nowrap;
+      margin: 100px 0px;
+      gap: 45px;
+      position: relative;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .image-container {
+      flex: 0 0 auto;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .category-image {
+      width: 293px;
+      height: 293px;
+      object-fit: cover;
+      border-radius: inherit;
+      display: block;
+    }
+
+    .image-container.blurred {
+      opacity: 0.2;
+      filter: blur(2px);
+    }
+
+    .image-container.blurred-extra {
+      opacity: 0.7;
+      filter: blur(2px);
+    }
+
+    .image-container.blurred-slight {
+      opacity: 0.5;
+      filter: blur(1px);
+    }
+
+    .swipe-icon {
+      position: absolute;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 10;
+      width: 41px;
+      height: 41px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .left-icon {
+      left: 260px;
+      top: 50%;
+    }
+
+    .right-icon {
+      right: -60px;
+      top: 50%;
+    }
+
+    .swipe-icon img {
+      width: 41px;
+      height: 41px;
+    }
+
+    .image-text {
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    .image-name {
+      font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      line-height: 1.5em;
+      text-align: left;
+      color: rgb(51, 51, 51);
+      margin: 0;
+    }
+
+    .image-description {
+      font-family: "Outfit", "Outfit Placeholder", sans-serif;
+      font-size: 20px;
+      letter-spacing: -0.5px;
+      line-height: 1.4em;
+      text-align: left;
+      color: rgb(136, 136, 136);
+      margin: 5px 0 0 0;
+      max-width: 300px;
+      font-weight: 300;
+    }
+
+    .category::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Responsive Design for Smaller Devices */
+    @media (max-width: 768px) {
+      .category {
+        height: auto;
+        align-items: center;
+        padding: 30px 5% 0 5%;
+      }
+
+      .category-text {
+        text-align: center;
+      }
+
+      .category-heading {
+        font-size: 30px;
+      }
+
+      .category-subtitle {
+        font-size: 14px;
+      }
+
+      .category-images {
+        flex-wrap: nowrap;
+        margin: 50px 0;
+        gap: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .image-container {
+        flex: 0 0 100%;
+        display: none;
+      }
+
+      .image-container.active {
+        display: block;
+      }
+
+      .category-image {
+        width: 100%;
+        height: 300px;
+      }
+
+      .image-name {
+        font-size: 20px;
+        text-align:center;
+      }
+
+      .image-description {
+        font-size: 14px;
+        margin-left:30px;
+      }
+
+      .swipe-icon {
+        width: 30px;
+        height: 30px;
+      }
+
+      .swipe-icon img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .left-icon {
+        left: 10px;
+      }
+
+      .right-icon {
+        right: 10px;
+      }
+    }
+   
+
+
+
+ .custom-order-section {
+    width: 100vw;
+    height: 1187px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background: rgb(250, 249, 247);
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.header-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: -2px;
+    color: #000000;
+    margin: 0 0 10px 0;
+    margin-top: 50px;
+}
+
+.header-title span {
+    font-style: italic;
+}
+
+.header-subtitle {
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(92, 91, 91);
+    margin-bottom: 60px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.form-section {
+    width: 50%;
+}
+
+.custom-order-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-row label {
+    width: 48%;
+}
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.form-input-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-input {
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #999999;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+/* Remove underlines for Gold Karat and Upload Reference Image */
+.form-label:nth-child(6) .form-input,
+.form-label:nth-child(8) .form-input {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Single fields have double the width of paired fields */
+.form-label:not(.form-row .form-label) .form-input {
+    width: 100%;
+}
+
+.form-row .form-input {
+    width: 100%;
+}
+
+/* Style for Jewelry Type with dropdown icon */
+.form-label:nth-child(5) .form-input-wrapper {
+    position: relative;
+}
+
+.dropdown-icon {
+    width: 16px;
+    height: 16px;
+    fill: #999999;
+}
+
+.karat-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.karat-button {
+    border: 0.5px solid rgb(150, 150, 150);
+    background-color: transparent;
+    padding: 8px 16px;
+    font-family: "Outfit", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.karat-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgb(168, 121, 53);
+    transform: translateX(-50%);
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    z-index: -1;
+}
+
+.karat-button:hover::before {
+    width: 200%;
+    height: 200%;
+    bottom: -50%;
+}
+
+.upload-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-button div {
+    border: 1px solid rgb(34, 34, 34);
+    background-color: rgb(250, 249, 247);
+    padding: 8px 16px;
+    font-family: "Outfit", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: #000000;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: rgba(143, 133, 133, 0.07) 0px 0.557334px 1.89494px -0.4375px,
+                rgba(143, 133, 133, 0.08) 0px 1.69015px 5.74652px -0.875px,
+                rgba(143, 133, 133, 0.09) 0px 4.46786px 15.1907px -1.3125px,
+                rgba(143, 133, 133, 0.13) 0px 14px 47.6px -1.75px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.upload-button div::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgb(168, 121, 53);
+    transform: translateX(-50%);
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    z-index: -1;
+}
+
+.upload-button div:hover::before {
+    width: 200%;
+    height: 200%;
+    bottom: -50%;
+}
+
+.submit-button {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    box-shadow: rgba(143, 133, 133, 0.07) 0px 0.557334px 1.89494px -0.4375px,
+                rgba(143, 133, 133, 0.08) 0px 1.69015px 5.74652px -0.875px,
+                rgba(143, 133, 133, 0.09) 0px 4.46786px 15.1907px -1.3125px,
+                rgba(143, 133, 133, 0.13) 0px 14px 47.6px -1.75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgb(168, 121, 53);
+    transform: translateX(-50%);
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    z-index: -1;
+}
+
+.submit-button:hover::before {
+    width: 200%;
+    height: 200%;
+    bottom: -50%;
+}
+
+.image-section {
+    margin-top: 0px;
+    width: 45%;
+    height: 778px;
+}
+
+.custom-order-image {
+    width: 100%;
+    height: auto;
+    max-height: 1104px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Media query for smaller devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .custom-order-section {
+        height: auto;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .header-content {
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .header-title {
+        font-size: 36px;
+        margin-top: 20px;
+    }
+
+    .header-subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-section {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .form-row label {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        margin-bottom: 30px;
+    }
+
+    .form-input {
+        font-size: 14px;
+        padding-bottom: 8px;
+    }
+
+    .dropdown-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .karat-options {
+        justify-content: center;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .karat-button {
+        padding: 6px 12px;
+        font-size: 12px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .karat-button::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: rgb(168, 121, 53);
+        transform: translateX(-50%);
+        transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+        z-index: -1;
+    }
+
+    .karat-button:hover::before {
+        width: 200%;
+        height: 200%;
+        bottom: -50%;
+    }
+
+    .upload-button div {
+        padding: 6px 12px;
+        font-size: 12px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .upload-button div::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: rgb(168, 121, 53);
+        transform: translateX(-50%);
+        transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+        z-index: -1;
+    }
+
+    .upload-button div:hover::before {
+        width: 200%;
+        height: 200%;
+        bottom: -50%;
+    }
+
+    .submit-button {
+        font-size: 16px;
+        padding: 12px 18px;
+        max-width: 300px;
+        margin: 10px auto;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .submit-button::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background-color: rgb(168, 121, 53);
+        transform: translateX(-50%);
+        transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+        z-index: -1;
+    }
+
+    .submit-button:hover::before {
+        width: 200%;
+        height: 200%;
+        bottom: -50%;
+    }
+
+    .image-section {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .custom-order-image {
+        max-height: 600px;
+    }
+}
+
+  .Design {
+    width: 100vw;
+    height: 1039px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    padding: 60px 5% 0 5%;
+    box-sizing: border-box;
+    background: #faf9f7;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .Design-text {
+    text-align: left;
+    margin: 0;
+  }
+
+  .Design-heading {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 50px;
+    line-height: 1.2em;
+    letter-spacing: -2px;
+    font-weight: 300;
+    color: #000000;
+    margin: 0;
+    word-spacing: 2px;
+  }
+
+  .Design-heading .italic {
+    font-style: italic;
+    word-spacing: 2px;
+    margin-left: 10px;
+  }
+
+  .Design-subtitle {
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #828282;
+    letter-spacing: -0.02em;
+    line-height: 1.6em;
+    margin-top: 10px;
+  }
+
+  .design-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+  }
+
+  .design-left {
+    width: 45%;
+  }
+
+  .design-text-block {
+    margin-bottom: 20px;
+  }
+
+  .design-heading {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 500;
+    color: #000000;
+    margin: 0 0 10px 0;
+  }
+
+  .design-subheading {
+    font-family: "Outfit", "Outfit Placeholder", sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    color: rgb(161, 161, 161);
+    margin-bottom: 40px;
+  }
+
+  .design-button {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Outfit", "Outfit Placeholder", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 230px;
+    cursor: pointer;
+    width: 700px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .design-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgb(168, 121, 53);
+    transform: translateX(-50%);
+    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+    z-index: -1;
+  }
+
+  .design-button:hover::before {
+    width: 200%;
+    height: 200%;
+    bottom: -50%;
+  }
+
+  .design-right {
+    width: 45%;
+  }
+
+  .design-showcase-image {
+    width: 560px;
+    height: 648px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Responsive Design for Smaller Devices */
+  @media (max-width: 768px) {
+    .Design {
+      height: auto;
+      align-items: center;
+      padding: 30px 5% 0 5%;
+    }
+
+    .Design-text {
+      text-align: center;
+    }
+
+    .Design-heading {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .Design-heading .italic {
+      margin-left: 0;
+    }
+
+    .Design-subtitle {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .design-content {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .design-left {
+      width: 100%;
+      text-align: center;
+    }
+
+    .design-text-block {
+      margin-bottom: 15px;
+    }
+
+    .design-heading {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .design-subheading {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .design-button {
+      width: 100%;
+      margin-top: 20px;
+
+      margin-bottom: 20px;
+    }
+
+    .design-right {
+      width: 100%;
+      text-align: center;
+    }
+
+    .design-showcase-image {
+      width: 100%;
+      height: 300px;
+    }
+  }
+
+
+
+
+.loved-text {
+    text-align: left;
+    margin: 0;
+}
+
+.loved-heading {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 50px;
+    line-height: 1.2em;
+    letter-spacing: -2px;
+    font-weight: 300;
+    color: #000000;
+    margin: 0;
+}
+
+.loved-heading .italic {
+    font-style: italic;
+    margin-left: 7px;
+}
+
+.loved-subtitle {
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #828282;
+    letter-spacing: -0.02em;
+}
+
+.review-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    position: relative;
+}
+
+.review-content {
+    width: 800px;
+    height: 478px;
+    background: #FAF9F7;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.star-rating {
+    margin-top: 80px;
+    margin-left: 5%;
+    display: flex;
+    gap: 5px;
+}
+
+.star-icon {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    fill: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));
+    flex-shrink: 0;
+}
+
+.review-text {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 37px;
+    line-height: 1.3em;
+    text-align: left;
+    margin-left: 5%;
+    margin-top: 40px;
+    max-width:650px;
+}
+
+.review-author {
+    font-family: "Outfit", "Outfit Placeholder", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    line-height: 1.4em;
+    color: #969696;
+    text-align: justify;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+.overlay-image {
+    position: absolute;
+    width: 193px;
+    height: 250px;
+    right: 20%;
+    top: 0%;
+    transform: translate(50%, 50%);
+    z-index: 10;
+}
+
+.navigation-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 500px;
+    gap: 20px;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+.slider-track {
+  display: flex;
+  width: max-content;
+  transition: transform 0.8s ease-in-out;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.slide {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+
+
+
+
+.banner {
+    width: 100%;
+    height: 200px;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin: 0px;
+    padding: 10px;
+    list-style-type: none;
+    opacity: 1;
+    overflow: hidden;
+    background-color: rgba(168, 121, 54, 0.27);
+    position: relative;
+  }
+
+  .banner-content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: slideLeft 10s linear infinite;
+  }
+
+  .banner-text {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.3em;
+    text-align: center;
+    margin-right: 20px;
+    margin-top: 60px;
+  }
+
+  .banner-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    margin-top: 50px;
+  }
+
+  @keyframes slideLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Move half the width to ensure continuity */
+  }
+
+  /* Responsive Design for Smaller Devices */
+  @media (max-width: 768px) {
+    .banner {
+      height: 100px;
+      padding: 5px;
+    }
+
+    .banner-content {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner-text {
+      font-size: 20px;
+      margin-right: 10px;
+      margin-top: 30px;
+    }
+
+    .banner-icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      margin-top: 25px;
+    }
+  }
+
+.footer {
+    background-color: rgb(250, 249, 247);
+    width: 100%;
+    box-shadow: 0 0.557334px 1.89494px -0.4375px rgba(143, 133, 133, 0.07),
+                0 1.69015px 5.74652px -0.875px rgba(143, 133, 133, 0.08),
+                0 4.46786px 15.1907px -1.3125px rgba(143, 133, 133, 0.09),
+                0 14px 47.6px -1.75px rgba(143, 133, 133, 0.13);
+    padding: 40px 5%;
+    position: relative;
+    min-height: 500px; /* Ensure enough space for layout */
+}
+ .footer {
+            background-color: rgb(250, 249, 247);
+            width: 100%;
+            box-shadow: 0 0.557334px 1.89494px -0.4375px rgba(143, 133, 133, 0.07),
+                        0 1.69015px 5.74652px -0.875px rgba(143, 133, 133, 0.08),
+                        0 4.46786px 15.1907px -1.3125px rgba(143, 133, 133, 0.09),
+                        0 14px 47.6px -1.75px rgba(143, 133, 133, 0.13);
+            padding: 40px 5%;
+            position: relative;
+            min-height: 500px;
+        }
+
+        .footer-heading {
+            font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+            font-size: 50px;
+            letter-spacing: -0.04em;
+            margin: 40px 0 0 40px;
+            color: rgb(0, 0, 0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-weight: 500;
+        }
+
+        .highlight {
+            font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+            font-size: 50px;
+            font-style: italic;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1.2em;
+            color: rgb(168, 121, 53);
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .animated-word {
+            display: inline-block;
+            opacity: 0;
+            animation: jumpIn 0.8s ease-out forwards;
+        }
+
+        .animated-word.letter {
+            display: inline-block;
+            animation: letterJump 0.6s ease-out forwards;
+        }
+
+        @keyframes jumpIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            50% {
+                transform: translateY(-10px) scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes letterJump {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .footer-button {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0.557334px 1.89494px -0.4375px rgba(143, 133, 133, 0.07),
+                        0 1.69015px 5.74652px -0.875px rgba(143, 133, 133, 0.08),
+                        0 4.46786px 15.1907px -1.3125px rgba(143, 133, 133, 0.09),
+                        0 14px 47.6px -1.75px rgba(143, 133, 133, 0.13);
+            position: absolute;
+            top: 40px;
+            right: 40px;
+        }
+
+        .footer-image {
+            position: absolute;
+            top: 100px;
+            right: 40px;
+        }
+
+        .image-decor {
+            width: 604px;
+            height: 324px;
+            object-fit: cover;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            position: absolute;
+            top: 170px;
+            left: 40px;
+            width: 60%;
+        }
+
+        .nav-column {
+            flex: 1;
+        }
+
+        .nav-title {
+            font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+            font-size: 22px;
+            line-height: 1.3em;
+            margin: 0 0 10px 0;
+            font-weight: 500;
+        }
+
+        .nav-item {
+            font-family: "Outfit", "Outfit Placeholder", sans-serif;
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.3em;
+            color: rgb(161, 161, 161);
+            margin: 5px 0;
+        }
+
+        .footer-bottom-left {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-image {
+            width: 78px;
+            height: 78px;
+            object-fit: cover;
+        }
+
+        .footer-title {
+            font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+            font-size: 35px;
+            font-weight: 500;
+            text-align: center;
+            margin: 0;
+        }
+
+        .footer-copyright {
+            font-family: "Outfit", "Outfit Placeholder", sans-serif;
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.3em;
+            color: rgb(125, 122, 122);
+            margin: 0;
+        }
+
+        .social-icons {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icon {
+            width: 42px;
+            height: 42px;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 20px 15px;
+                min-height: auto;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-heading {
+                position: static;
+                font-size: 32px;
+                margin: 0;
+                order: 1;
+                text-align: center;
+                width: 100%;
+            }
+
+            .highlight {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+
+            .footer-button {
+                position: static;
+                order: 2;
+                padding: 12px 24px;
+                font-size: 14px;
+                margin: 0;
+            }
+
+            .footer-image {
+                position: static;
+                order: 3;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .image-decor {
+                width: 100%;
+                max-width: 350px;
+                height: auto;
+                aspect-ratio: 604/324;
+            }
+
+            .footer-nav {
+                position: static;
+                order: 4;
+                width: 100%;
+                flex-direction: column;
+                gap: 25px;
+                text-align: center;
+            }
+
+            .nav-column {
+                flex: none;
+            }
+
+            .nav-title {
+                font-size: 18px;
+                margin-bottom: 15px;
+            }
+
+            .nav-item {
+                font-size: 14px;
+                margin: 8px 0;
+            }
+
+            .footer-bottom-left {
+                position: static;
+                order: 5;
+                align-items: center;
+                text-align: center;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .footer-logo {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .logo-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            .footer-title {
+                font-size: 24px;
+            }
+
+            .footer-copyright {
+                font-size: 12px;
+                text-align: center;
+            }
+
+            .social-icons {
+                position: static;
+                order: 6;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .social-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .footer {
+                padding: 15px 10px;
+                gap: 25px;
+            }
+
+            .footer-heading {
+                font-size: 28px;
+            }
+
+            .highlight {
+                font-size: 28px;
+            }
+
+            .footer-button {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .image-decor {
+                max-width: 280px;
+            }
+
+            .nav-title {
+                font-size: 16px;
+            }
+
+            .nav-item {
+                font-size: 13px;
+            }
+
+            .footer-title {
+                font-size: 20px;
+            }
+
+            .logo-image {
+                width: 50px;
+                height: 50px;
+            }
+
+            .social-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+  </style>
+</head>
+<body>
+
+ 
+<section class="full-image-section">
+    <video src="https://framerusercontent.com/assets/MxZ4Lbbb5P3hR2nDBcNqOnLZOE.mp4" loop preload="auto" muted playsinline class="full-background-image" autoplay></video>
+    <nav class="navsbar">
+        <div class="logos">
+            <img src="https://framerusercontent.com/images/7WFOrGoUHJ5YwY59bnTpeAlG86g.png" alt="Grand Jewelers Logo" class="logos-image">
+            <h1 class="logos-text">GRAND JEWELLERS</h1>
+        </div>
+        <div class="navs-icons">
+            <svg class="navs-icon" viewBox="0 0 24 24" fill="rgb(68, 68, 68)">
+                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+            <svg class="navs-icon" viewBox="0 0 24 24" fill="rgb(68, 68, 68)">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+            <svg class="navs-icon" viewBox="0 0 24 24" fill="rgb(68, 68, 68)">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-1-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+            </svg>
+            <input type="text" class="search-input" placeholder="Search...">
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="navs-links">
+            <li><a href="#" class="navs-item">ENGAGEMENT RINGS</a><div class="engagement-container"><h3>Engagement Ring Styles</h3><div class="engagement-columns"><div class="engagement-column"><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div></div><div class="engagement-column"><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="engagement-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div></div></div></div></li>
+            <li class="dropdown"><a href="#" class="navs-item dropbtn">WEDDING RINGS</a><div class="wedding-container"><h3>Wedding Ring Styles</h3><div class="jewelry-column"><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div></div></div></li>
+            <li class="dropdown"><a href="#" class="navs-item dropbtn">JEWELRY</a><div class="jewelry-container"><h3>Jewelry Styles</h3><div class="jewelry-column"><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div><div class="jewelry-item"><svg><use href="#custom-svg"></use></svg><span>Solitaire</span></div></div></div></li>
+            <li><a href="#" class="navs-item">GEMSTONE</a></li>
+            <li><a href="#" class="navs-item">CUSTOM</a></li>
+            <li><a href="#" class="navs-item">ABOUT</a></li>
+        </ul>
+        <div class="user-container"><img src="https://via.placeholder.com/200" alt="User Image"></div>
+    </nav>
+    <div class="content">
+        <h2 class="main-heading">Design the Jewelry You</h2>
+        <h2 class="main-heading">Dream Of</h2>
+        <button class="shop-buttons">Bring Your Design</button>
+    </div>
+    <svg id="custom-svg" style="display:none;">
+        <use href="https://framerusercontent.com/images/dDUgJERkQxFipFZLHZqS9aQFC8.svg#svgView(viewBox(0,0,24,24))"></use>
+    </svg>
+</section>
+
+<script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.querySelector('.navs-links').classList.toggle('active');
+    });
+</script>
+  
+ <section class="category">
+        <div class="category-text">
+            <h2 class="category-heading">Our<span class="italic">Custom</span>Creations</h2>
+        </div>
+        <div class="category-images" id="imageContainer">
+            <div class="image-container" data-index="1">
+                <img src="https://framerusercontent.com/images/fJKmkmukVfgLhGH53MKnQY0ulDI.jpg" alt="Jewelry Category 1" class="category-image">
+                <div class="image-text">
+                    <h3 class="image-name">Rings</h3>
+                    <p class="image-description">For promises, proposals, and everything in between.</p>
+                </div>
+            </div>
+            <div class="image-container" data-index="2">
+                <img src="https://framerusercontent.com/images/kjBsWLZS2lFRXGFEmrSQTxBvsI.jpg" alt="Jewelry Category 2" class="category-image">
+                <div class="image-text">
+                    <h3 class="image-name">Pendants</h3>
+                    <p class="image-description">A timeless touch to elevate every moment.</p>
+                </div>
+            </div>
+            <div class="image-container" data-index="3">
+                <img src="https://framerusercontent.com/images/PMtbSuuHdUNON2KKjgI1XlioQ.jpg" alt="Jewelry Category 3" class="category-image">
+                <div class="image-text">
+                    <h3 class="image-name">Earrings</h3>
+                    <p class="image-description">Where elegance meets everyday sparkle.</p>
+                </div>
+            </div>
+            <div class="image-container" data-index="4">
+                <img src="https://framerusercontent.com/images/ni8F1O52ksEg2FohFfRCwEB8OY.jpg" alt="Jewelry Category 4" class="category-image">
+                <div class="image-text">
+                    <h3 class="image-name">Bracelets</h3>
+                    <p class="image-description">Gracefully designed to complete your look.</p>
+                </div>
+            </div>
+            <div class="image-container" data-index="5">
+                <img src="https://framerusercontent.com/images/t5n5f13dWcB4hIZrxnGdU94Iuhg.jpg" alt="Jewelry Category 5" class="category-image">
+                <div class="image-text">
+                    <h3 class="image-name">Birthstones</h3>
+                    <p class="image-description">Personalized brilliance for every birth month.</p>
+                </div>
+            </div>
+            <div class="image-container" data-index="6">
+                <img src="https://framerusercontent.com/images/I5L3dL5hkLhiYQagVkkTgPnQkE.jpg" alt="Jewelry Category 6" class="category-image">
+                <div class="image-text">
+                    <h3 class="image-name">Custom Orders</h3>
+                    <p class="image-description">Your vision. Our craftsmanship.</p>
+                </div>
+            </div>
+            <!-- Navigation Icons -->
+            <div class="swipe-icon left-icon" id="leftIcon" style="display: none;">
+                <img src="left.svg" alt="Left Arrow">
+            </div>
+            <div class="swipe-icon right-icon" id="rightIcon">
+                <img src="right.svg" alt="Right Arrow">
+            </div>
+        </div>
+    </section>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const categorySection = document.querySelector('.category');
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target); // Stop observing once animated
+            }
+          });
+        },
+        { threshold: 0.9 } // Trigger when 10% of the section is visible
+      );
+      observer.observe(categorySection);
+    });
+  </script>
+  <script>
+    class JewelrySwiper {
+      constructor() {
+        this.container = document.getElementById('imageContainer');
+        this.leftIcon = document.querySelector('.left-icon');
+        this.rightIcon = document.querySelector('.right-icon');
+        this.images = document.querySelectorAll('.image-container');
+        this.currentIndex = 0;
+        this.maxIndex = window.innerWidth > 768 ? 1 : this.images.length - 1; // Adjust maxIndex based on screen size
+
+        this.init();
+      }
+
+      init() {
+        this.leftIcon.addEventListener('click', () => this.swipeLeft());
+        this.rightIcon.addEventListener('click', () => this.swipeRight());
+        this.updateView();
+        window.addEventListener('resize', () => {
+          this.maxIndex = window.innerWidth > 768 ? 1 : this.images.length - 1;
+          this.currentIndex = Math.min(this.currentIndex, this.maxIndex); // Ensure currentIndex doesn't exceed maxIndex
+          this.updateView();
+        });
+      }
+
+      swipeLeft() {
+        if (this.currentIndex > 0) {
+          this.currentIndex--;
+          this.updateView();
+        }
+      }
+
+      swipeRight() {
+        if (this.currentIndex < this.maxIndex) {
+          this.currentIndex++;
+          this.updateView();
+        }
+      }
+
+      updateView() {
+        if (window.innerWidth > 768) {
+          // Behavior for larger devices
+          const imageWidth = 293;
+          const gap = 45;
+          let translateX;
+          if (this.currentIndex === 0) {
+            translateX = 0; // Show images 1-5
+          } else {
+            const partialWidth = imageWidth * 0; // 20% of 2nd image
+            translateX = -(imageWidth + gap + partialWidth); // Shift to start at 2nd image's partial view
+          }
+          this.container.style.transform = `translateX(${translateX}px)`;
+
+          this.images.forEach(img => {
+            img.classList.remove('blurred', 'blurred-extra', 'blurred-slight');
+            img.style.display = 'block';
+          });
+
+          if (this.currentIndex === 0) {
+            this.images[4].classList.add('blurred-extra'); // 5th image
+            this.images[5].style.display = 'none'; // 6th image
+          } else {
+            this.images[0].style.display = 'none'; // 1st image
+            this.images[1].classList.add('blurred'); // 2nd image at 20% opacity
+          }
+        } else {
+          // Behavior for smaller devices
+          this.images.forEach((img, index) => {
+            img.classList.remove('active');
+            if (index === this.currentIndex) {
+              img.classList.add('active');
+            }
+          });
+        }
+
+        this.leftIcon.style.display = this.currentIndex > 0 ? 'flex' : 'none';
+        this.rightIcon.style.display = this.currentIndex < this.maxIndex ? 'flex' : 'none';
+      }
+    }
+
+    // Initialize the swiper when the page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      new JewelrySwiper();
+    });
+  </script>
+
+
+   <section class="custom-order-section">
+        <div class="header-content">
+            <h2 class="header-title">Start <span>Your</span> Custom Order</h2>
+            <p class="header-subtitle">Tell us what you have in mind, and let our artisans bring it to life.</p>
+        </div>
+        <div class="form-container">
+            <div class="form-section">
+                <form class="custom-order-form">
+                    <div class="form-row">
+                        <label class="form-label">
+                            <div class="form-input-wrapper">
+                                <span class="form-input">First Name</span>
+                            </div>
+                        </label>
+                        <label class="form-label">
+                            <div class="form-input-wrapper">
+                                <span class="form-input">Last Name</span>
+                            </div>
+                        </label>
+                    </div>
+                    <label class="form-label">
+                        <div class="form-input-wrapper">
+                            <span class="form-input">Email</span>
+                        </div>
+                    </label>
+                    <label class="form-label">
+                        <div class="form-input-wrapper">
+                            <span class="form-input">Phone Number (optional)</span>
+                        </div>
+                    </label>
+                    <label class="form-label">
+                        <div class="form-input-wrapper">
+                            <span class="form-input">Jewelry Type</span>
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7 10l5 5 5-5H7z"/>
+                            </svg>
+                        </div>
+                    </label>
+                    <label class="form-label">
+                        <div class="form-input-wrapper">
+                            <span class="form-input">Your Budget</span>
+                        </div>
+                    </label>
+                    <label class="form-label">
+                        <div class="form-input-wrapper">
+                            <span class="form-input">Gold Karat</span>
+                        </div>
+                        <div class="karat-options">
+                            <button type="button" class="karat-button">10K</button>
+                            <button type="button" class="karat-button">14K</button>
+                            <button type="button" class="karat-button">18K</button>
+                        </div>
+                    </label>
+                    <label class="form-label">
+                        <div class="form-input-wrapper">
+                            <span class="form-input">Tell us your idea...</span>
+                        </div>
+                    </label>
+                    <label class="form-label">
+                        <div class="form-input-wrapper">
+                            <span class="form-input">Upload Reference Image (optional)</span>
+                            <div class="upload-button">
+                                <div>Upload</div>
+                            </div>
+                        </div>
+                    </label>
+                    <button class="submit-button">Submit Request</button>
+                </form>
+            </div>
+            <div class="image-section">
+                <img src="https://framerusercontent.com/images/9fhe3sgBEsZnBEHsZkNDkRzquNw.jpg" alt="Custom Order Image" class="custom-order-image">
+            </div>
+        </div>
+    </section>
+
+
+<section class="Design">
+    <div class="Design-text">
+        <h2 class="Design-heading">How It<span class="italic">Works</span></h2>
+        <p class="Design-subtitle">Collaborate with our expert designers to create something truly yours.</p>
+    </div>
+    <div class="design-content">
+        <div class="design-left">
+            <div class="design-text-block">
+                <h3 class="design-heading">Share your idea</h3>
+                <p class="design-subheading">Send us your concept, inspiration, or occasion details.</p>
+            </div>
+            <div class="design-text-block">
+                <h3 class="design-heading">We Design It Together</h3>
+                <p class="design-subheading">Our experts sketch and refine the design with you.</p>
+            </div>
+            <div class="design-text-block">
+                <h3 class="design-heading">Crafted & Delivered</h3>
+                <p class="design-subheading">Once approved, we handcraft your piece and deliver it with care.</p>
+            </div>
+            <button class="design-button">Design Your Piece</button>
+        </div>
+        <div class="design-right">
+            <img src="https://framerusercontent.com/images/R02DgGGQ8qQZ4pdx3BRdYhBYVBo.jpg" alt="Design Showcase" class="design-showcase-image">
+        </div>
+    </div>
+</section>
+
+<section class="banner">
+    <div class="banner-content">
+        <span class="banner-text">FAST & SECURE SHIPPING</span>
+               <svg class="banner-icon" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width=".189"><g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="m15.5 4 3 4-8 10-8-10 3.009-4zm-13 4h16m-11 0 3 10m3-10-3 10"/><path d="M5.509 4 7.5 8l3-4 3 4 2-4"/></g></svg>
+
+        <span class="banner-text">FREE RETURNS WITHIN 14 DAYS</span>
+        <svg class="banner-icon" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width=".189"><g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="m15.5 4 3 4-8 10-8-10 3.009-4zm-13 4h16m-11 0 3 10m3-10-3 10"/><path d="M5.509 4 7.5 8l3-4 3 4 2-4"/></g></svg>
+<span class="banner-text">FAST & SECURE SHIPPING</span>
+               <svg class="banner-icon" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width=".189"><g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="m15.5 4 3 4-8 10-8-10 3.009-4zm-13 4h16m-11 0 3 10m3-10-3 10"/><path d="M5.509 4 7.5 8l3-4 3 4 2-4"/></g></svg>
+
+        <span class="banner-text">FREE RETURNS WITHIN 14 DAYS</span>
+        <svg class="banner-icon" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width=".189"><g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="m15.5 4 3 4-8 10-8-10 3.009-4zm-13 4h16m-11 0 3 10m3-10-3 10"/><path d="M5.509 4 7.5 8l3-4 3 4 2-4"/></g></svg>
+<span class="banner-text">FAST & SECURE SHIPPING</span>
+               <svg class="banner-icon" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width=".189"><g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="m15.5 4 3 4-8 10-8-10 3.009-4zm-13 4h16m-11 0 3 10m3-10-3 10"/><path d="M5.509 4 7.5 8l3-4 3 4 2-4"/></g></svg>
+
+        <span class="banner-text">FREE RETURNS WITHIN 14 DAYS</span>
+        <svg class="banner-icon" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg" stroke="#000" stroke-width=".189"><g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="m15.5 4 3 4-8 10-8-10 3.009-4zm-13 4h16m-11 0 3 10m3-10-3 10"/><path d="M5.509 4 7.5 8l3-4 3 4 2-4"/></g></svg>
+
+
+      </div>
+</section>
+
+
+
+
+
+<section class="footer">
+        <h2 class="footer-heading">
+            Jewelry that feels<br><span class="highlight" id="animatedText">personal</span>
+        </h2>
+        <button class="footer-button">Design Your Custom Piece</button>
+        <div class="footer-image">
+            <img src="https://framerusercontent.com/images/CkLEHsxBYYKgAb7L0eeggYWYGHo.png?scale-down-to=512" alt="Footer Image" class="image-decor">
+        </div>
+        <div class="footer-nav">
+            <div class="nav-column">
+                <h3 class="nav-title">Shop</h3>
+                <p class="nav-item">Rings</p>
+                <p class="nav-item">Bracelets</p>
+                <p class="nav-item">Earrings</p>
+                <p class="nav-item">Birthstones</p>
+                <p class="nav-item">Custom Orders</p>
+            </div>
+            <div class="nav-column">
+                <h3 class="nav-title">Company</h3>
+                <p class="nav-item">About Us</p>
+                <p class="nav-item">Contact</p>
+                <p class="nav-item">Reviews</p>
+                <p class="nav-item">Privacy Policy</p>
+                <p class="nav-item">Terms of Service</p>
+            </div>
+            <div class="nav-column">
+                <h3 class="nav-title">Locations</h3>
+                <p class="nav-item">Los Angeles, CA</p>
+                <p class="nav-item">New York, NY</p>
+                <p class="nav-item">Miami, FL</p>
+                <p class="nav-item">Chicago, IL</p>
+                <p class="nav-item">San Francisco, CA</p>
+            </div>
+        </div>
+        <div class="footer-bottom-left">
+            <div class="footer-logo">
+                <img src="https://framerusercontent.com/images/7WFOrGoUHJ5YwY59bnTpeAlG86g.png" alt="Grand Jewelers Logo" class="logo-image">
+                <h1 class="footer-title">GRAND JEWELLERS</h1>
+            </div>
+            <p class="footer-copyright">© 2025 Grand Jewelers. All rights reserved.</p>
+        </div>
+        <div class="social-icons">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="rgb(168, 121, 53)">
+                <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path>
+            </svg>
+            <svg class="social-icon" viewBox="0 0 24 24" fill="rgb(168, 121, 53)">
+                <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2m13 2h-2.5A3.5 3.5 0 0 0 12 8.5V11h-2v3h2v7h3v-7h3v-3h-3V9a1 1 0 0 1 1-1h2V5z"></path>
+            </svg>
+            <svg class="social-icon" viewBox="0 0 24 24" fill="rgb(168, 121, 53)">
+                <path d="M16.75 13.96c.25.13.41.2.46.3.06.11.04.61-.21 1.18-.2.56-1.24 1.1-1.7 1.12-.46.02-.47.36-2.96-.73-2.49-1.09-3.99-3.75-4.11-3.92-.12-.17-.96-1.38-.92-2.61.05-1.22.69-1.8.95-2.04.24-.26.51-.29.68-.26h.47c.15 0 .36-.06.55.45l.69 1.87c.06.13.1.28.01.44l-.27.41-.39.42c-.12.12-.26.25-.12.5.12.26.62 1.09 1.32 1.78.91.88 1.71 1.17 1.95 1.3.24.14.39.12.54-.04l.81-.94c.19-.25.35-.19.58-.11l1.67.88M12 2a10 10 0 0 1 10 10 10 10 0 0 1-10 10c-1.97 0-3.8-.57-5.35-1.55L2 22l1.55-4.65A9.969 9.969 0 0 1 2 12 10 10 0 0 1 12 2m0 2a8 8 0 0 0-8 8c0 1.72.54 3.31 1.46 4.61L4.5 19.5l2.89-.96A7.95 7.95 0 0 0 12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <script>
+        // Animation for changing words with jumping letters
+        const words = ['personal', 'grand', 'right', 'special', 'powerful'];
+        let currentWordIndex = 0;
+        const animatedTextElement = document.getElementById('animatedText');
+
+        function animateWord(word, isLetterAnimation = false) {
+            animatedTextElement.innerHTML = '';
+            
+            if (isLetterAnimation) {
+                // Letter by letter animation
+                word.split('').forEach((letter, index) => {
+                    const span = document.createElement('span');
+                    span.textContent = letter === ' ' ? '\u00A0' : letter;
+                    span.className = 'animated-word letter';
+                    span.style.animationDelay = `${index * 0.1}s`;
+                    animatedTextElement.appendChild(span);
+                });
+            } else {
+                // Whole word animation
+                const span = document.createElement('span');
+                span.textContent = word;
+                span.className = 'animated-word';
+                animatedTextElement.appendChild(span);
+            }
+        }
+
+        function startAnimation() {
+            currentWordIndex = 0;
+            animateWord(words[currentWordIndex]);
+            
+            const interval = setInterval(() => {
+                currentWordIndex++;
+                if (currentWordIndex < words.length) {
+                    animateWord(words[currentWordIndex], true);
+                } else {
+                    clearInterval(interval);
+                    // Restart the cycle
+                    setTimeout(startAnimation, 2000);
+                }
+            }, 3000);
+        }
+
+        // Start the animation when page loads
+        window.addEventListener('load', () => {
+            setTimeout(startAnimation, 1000);
+        });
+    </script>
+
+
+
+</body>
+</html>
+
