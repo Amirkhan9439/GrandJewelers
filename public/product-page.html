@@ -642,6 +642,307 @@
             }
         }
 
+.perfect-category {
+    width: 100vw;
+    height: 830px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    padding: 60px 5% 0 5%;
+    box-sizing: border-box;
+    background: #faf9f7;
+    position: relative;
+    overflow: hidden;
+}
+
+.perfect-category-text {
+    text-align: left;
+    margin: 0;
+}
+
+.perfect-category-heading {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 50px;
+    line-height: 1.2em;
+    letter-spacing: -2px;
+    font-weight: 300;
+    color: #000000;
+    margin: 0;
+}
+
+.perfect-category-heading .perfect-italic {
+    font-style: italic;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.perfect-category-subtitle {
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: #828282;
+    letter-spacing: -0.02em;
+    line-height: 1.4em;
+    margin-top: 10px;
+}
+
+.perfect-category-images {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 100px 0px;
+    gap: 45px;
+    position: relative;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
+}
+
+.perfect-image-container {
+    flex: 0 0 auto;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.perfect-category-image {
+    width: 293px;
+    height: 293px;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+    transition: transform 0.6s ease-in-out;
+}
+
+.perfect-hover-image {
+    width: 293px;
+    height: 293px;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    transition: transform 0.6s ease-in-out;
+}
+
+.perfect-image-container:hover .perfect-category-image {
+    transform: translateX(-100%);
+}
+
+.perfect-image-container:hover .perfect-hover-image {
+    transform: translateX(0%);
+}
+
+.perfect-image-container.perfect-blurred {
+    opacity: 0.2;
+    filter: blur(2px);
+}
+
+.perfect-image-container.perfect-blurred-extra {
+    opacity: 0.7;
+    filter: blur(2px);
+}
+
+.perfect-image-container.perfect-blurred-slight {
+    opacity: 0.5;
+    filter: blur(1px);
+}
+
+.perfect-image-text {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.perfect-image-name {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+    line-height: 1.5em;
+    text-align: left;
+    color: var(--extracted-1of0zx5, rgb(51, 51, 51));
+    margin: 0;
+    display: inline-block;
+}
+
+.perfect-image-description {
+    font-family: "Outfit", "Outfit Placeholder", sans-serif;
+    font-size: 20px;
+    letter-spacing: -0.8px;
+    line-height: 1.5em;
+    text-align: left;
+    color: var(--extracted- Kep-1of0zx5, rgb(51, 51, 51));
+    margin: 5px 0 0 0;
+    max-width: 300px;
+    display: inline-block;
+    margin-left: 80px;
+}
+
+.diamond-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.diamond-icon {
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    fill: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));
+    color: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.diamond-text {
+    font-family: "Outfit", "Outfit Placeholder", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--extracted-r6o4lv, rgb(133, 131, 131));
+}
+
+.perfect-category::-webkit-scrollbar,
+.scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+.perfect-category,
+.scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scroll-container {
+    width: 100%;
+    position: relative;
+}
+
+.name-price-container {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.navigation-arrows {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.nav-arrow {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.nav-arrow:hover {
+    opacity: 0.7;
+}
+
+/* Responsive Design for Smaller Devices */
+@media (max-width: 768px) {
+    .perfect-category {
+        height: auto;
+        padding: 30px 5%;
+        align-items: center;
+    }
+
+    .perfect-category-text {
+        text-align: center;
+    }
+
+    .perfect-category-heading {
+        font-size: 30px;
+        letter-spacing: -1px;
+    }
+
+    .perfect-category-subtitle {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .scroll-container {
+        overflow-x: hidden;
+    }
+
+    .perfect-category-images {
+        flex-direction: row;
+        align-items: center;
+        margin: 30px 0;
+        gap: 0;
+        width: 50%;
+        overflow: hidden;
+        left:25%;
+    }
+
+    .perfect-image-container {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 300px;
+        display: none;
+    }
+
+    .perfect-image-container.active {
+        display: block;
+    }
+
+    .perfect-category-image,
+    .perfect-hover-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .perfect-image-text {
+        text-align: center;
+    }
+
+    .perfect-image-name {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .perfect-image-description {
+        font-size: 16px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .diamond-container {
+        justify-content: center;
+        margin-top: 15px;
+        margin-right: 0;
+    }
+
+    .diamond-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+    }
+
+    .diamond-text {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .name-price-container {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 5px;
+    }
+
+    .navigation-arrows {
+        display: flex;
+    }
+}
+
+
     
 .loved {
     width: 100vw;
@@ -1070,292 +1371,8 @@
         }
 
 
-     .perfect-category {
-    width: 100vw;
-    height: 830px;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: flex-start;
-    padding: 60px 5% 0 5%;
-    box-sizing: border-box;
-    background: #faf9f7;
-    position: relative;
-    overflow: hidden;
-}
 
-.perfect-category-text {
-    text-align: left;
-    margin: 0;
-}
 
-.perfect-category-heading {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 50px;
-    line-height: 1.2em;
-    letter-spacing: -2px;
-    font-weight: 300;
-    color: #000000;
-    margin: 0;
-}
-
-.perfect-category-heading .perfect-italic {
-    font-style: italic;
-    margin-right: 15px;
-    margin-left: 15px;
-}
-
-.perfect-category-subtitle {
-    font-family: "Outfit", sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    color: #828282;
-    letter-spacing: -0.02em;
-    line-height: 1.4em;
-    margin-top: 10px;
-}
-
-.perfect-category-images {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 100px 0px;
-    gap: 45px;
-    position: relative;
-    width: max-content;
-    transition: transform 0.5s ease-in-out;
-    overflow-x: auto;
-    overflow-y: hidden;
-    cursor: grab;
-    user-select: none;
-}
-
-.perfect-category-images:active {
-    cursor: grabbing;
-}
-
-.perfect-image-container {
-    flex: 0 0 auto;
-    position: relative;
-    transition: all 0.5s ease-in-out;
-    overflow: hidden;
-    border-radius: inherit;
-}
-
-.perfect-category-image {
-    width: 293px;
-    height: 293px;
-    object-fit: cover;
-    border-radius: inherit;
-    display: block;
-    transition: transform 0.6s ease-in-out;
-}
-
-.perfect-hover-image {
-    width: 293px;
-    height: 293px;
-    object-fit: cover;
-    border-radius: inherit;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateX(100%);
-    transition: transform 0.6s ease-in-out;
-}
-
-.perfect-image-container:hover .perfect-category-image {
-    transform: translateX(-100%);
-}
-
-.perfect-image-container:hover .perfect-hover-image {
-    transform: translateX(0%);
-}
-
-.perfect-image-container.perfect-blurred {
-    opacity: 0.2;
-    filter: blur(2px);
-}
-
-.perfect-image-container.perfect-blurred-extra {
-    opacity: 0.7;
-    filter: blur(2px);
-}
-
-.perfect-image-container.perfect-blurred-slight {
-    opacity: 0.5;
-    filter: blur(1px);
-}
-
-.perfect-image-text {
-    text-align: left;
-    margin-top: 10px;
-}
-
-.perfect-image-name {
-    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
-    font-size: 20px;
-    font-weight: 700;
-    letter-spacing: -0.8px;
-    line-height: 1.5em;
-    text-align: left;
-    color: var(--extracted-1of0zx5, rgb(51, 51, 51));
-    margin: 0;
-    display: inline-block;
-}
-
-.perfect-image-description {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 20px;
-    letter-spacing: -0.8px;
-    line-height: 1.5em;
-    text-align: left;
-    color: var(--extracted-1of0zx5, rgb(51, 51, 51));
-    margin: 5px 0 0 0;
-    max-width: 300px;
-    display: inline-block;
-    margin-left: 80px;
-}
-
-.diamond-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    margin-right: 20px;
-}
-
-.diamond-icon {
-    width: 21px;
-    height: 21px;
-    display: inline-block;
-    fill: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));
-    color: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));
-    flex-shrink: 0;
-    margin-right: 10px;
-}
-
-.diamond-text {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--extracted-r6o4lv, rgb(133, 131, 131));
-}
-
-.perfect-category::-webkit-scrollbar {
-    display: none;
-}
-
-.perfect-category {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.scroll-container {
-    width: 100%;
-    overflow-x: auto;
-    overflow-y: hidden;
-    position: relative;
-}
-
-.scroll-container::-webkit-scrollbar {
-    display: none;
-}
-
-.scroll-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.name-price-container {
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-    margin-top: 5px;
-}
-
-/* Responsive Design for Smaller Devices */
-@media (max-width: 768px) {
-    .perfect-category {
-        height: auto;
-        padding: 30px 5%;
-        align-items: center;
-    }
-
-    .perfect-category-text {
-        text-align: center;
-    }
-
-    .perfect-category-heading {
-        font-size: 30px;
-        letter-spacing: -1px;
-    }
-
-    .perfect-category-subtitle {
-        font-size: 14px;
-        text-align: center;
-        margin-top: 8px;
-    }
-
-    .scroll-container {
-        overflow-x: hidden;
-    }
-
-    .perfect-category-images {
-        flex-direction: column;
-        align-items: center;
-        margin: 30px 0;
-        gap: 30px;
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    .perfect-image-container {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .perfect-category-image, .perfect-hover-image {
-        width: 200px;
-        height: 200px;
-    }
-
-    .perfect-image-text {
-        text-align: center;
-    }
-
-    .perfect-image-name {
-        font-size: 16px;
-        text-align: center;
-    }
-
-    .perfect-image-description {
-        font-size: 16px;
-        text-align: center;
-        margin-left: 0;
-    }
-
-    .diamond-container {
-        justify-content: center;
-        margin-top: 15px;
-        margin-right: 0;
-    }
-
-    .diamond-icon {
-        width: 16px;
-        height: 16px;
-        margin-right: 8px;
-    }
-
-    .diamond-text {
-        font-size: 11px;
-        text-align: center;
-    }
-
-    .name-price-container {
-        justify-content: center;
-        gap: 15px;
-        margin-top: 5px;
-    }
-}
 
    
 
@@ -2558,179 +2575,158 @@
 
 
  <section class="perfect-category">
-        <div class="perfect-category-text">
-            <h2 class="perfect-category-heading">You May Also <span class="perfect-italic">Like</span></h2>
-            <p class="perfect-category-subtitle">Customer favorites crafted with care and brilliance.</p>
-        </div>
-        
-        <div class="scroll-container">
-            <div class="perfect-category-images" id="imageContainers">
-                <div class="perfect-image-container">
-                    <img src="https://framerusercontent.com/images/RBIuO9zwH6DRL7he4gSzIc3xLM8.jpg" alt="Jewelry Category 1" class="perfect-category-image">
-                    <img src="https://framerusercontent.com/images/tVshHOZXB2oOHwVGN9GI6jPtpzs.jpg" alt="Jewelry Category 1 Hover" class="perfect-hover-image">
-                
-                    <div class="perfect-image-text">
-                        <div class="diamond-container">
-                            <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" class="diamond-icon">
-                                <g color="var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53))" weight="duotone">
-                                    <path d="M229.67,133.62l-96,96a7.94,7.94,0,0,1-11.24,0l-96-96a7.94,7.94,0,0,1,0-11.24l96.05-96a7.94,7.94,0,0,1,11.24,0l96,96.05A7.94,7.94,0,0,1,229.67,133.62Z" opacity="0.2"></path>
-                                    <path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path>
-                                </g>
-                            </svg>
-                            <span class="diamond-text">Gold</span>
-                        </div>
-                        <div class="name-price-container">
-                            <h3 class="perfect-image-name">Soléa Bangle</h3>
-                            <p class="perfect-image-description">$1,900</p>
-                        </div>
+    <div class="perfect-category-text">
+        <h2 class="perfect-category-heading">You May Also <span class="perfect-italic">Like</span></h2>
+        <p class="perfect-category-subtitle">Customer favorites crafted with care and brilliance.</p>
+    </div>
+    
+    <div class="scroll-container">
+        <div class="perfect-category-images" id="imageContainers">
+            <div class="perfect-image-container">
+                <img src="https://framerusercontent.com/images/RBIuO9zwH6DRL7he4gSzIc3xLM8.jpg" alt="Jewelry Category 1" class="perfect-category-image">
+                <img src="https://framerusercontent.com/images/tVshHOZXB2oOHwVGN9GI6jPtpzs.jpg" alt="Jewelry Category 1 Hover" class="perfect-hover-image">
+                <div class="perfect-image-text">
+                    <div class="diamond-container">
+                        <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" class="diamond-icon">
+                            <g color="var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53))" weight="duotone">
+                                <path d="M229.67,133.62l-96,96a7.94,7.94,0,0,1-11.24,0l-96-96a7.94,7.94,0,0,1,0-11.24l96.05-96a7.94,7.94,0,0,1,11.24,0l96,96.05A7.94,7.94,0,0,1,229.67,133.62Z" opacity="0.2"></path>
+                                <path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path>
+                            </g>
+                        </svg>
+                        <span class="diamond-text">Gold</span>
+                    </div>
+                    <div class="name-price-container">
+                        <h3 class="perfect-image-name">Soléa Bangle</h3>
+                        <p class="perfect-image-description">$1,900</p>
                     </div>
                 </div>
-
-                <div class="perfect-image-container">
-                    <img src="https://framerusercontent.com/images/eDeZMhDxUIxduheOKXsm7cQUdOo.jpg" alt="Jewelry Category 2" class="perfect-category-image">
-                    <img src="https://framerusercontent.com/images/IjQ4Cn5zDm1LBvh7g4n5DvjhAvQ.jpg" alt="Jewelry Category 2 Hover" class="perfect-hover-image">
-                
-                    <div class="perfect-image-text">
-                        <div class="diamond-container">
-                            <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" class="diamond-icon">
-                                <g color="var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53))" weight="duotone">
-                                    <path d="M229.67,133.62l-96,96a7.94,7.94,0,0,1-11.24,0l-96-96a7.94,7.94,0,0,1,0-11.24l96.05-96a7.94,7.94,0,0,1,11.24,0l96,96.05A7.94,7.94,0,0,1,229.67,133.62Z" opacity="0.2"></path>
-                                    <path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path>
-                                </g>
-                            </svg>
-                            <span class="diamond-text">Gold.Diamond</span>
-                        </div>
-                        <div class="name-price-container">
-                            <h3 class="perfect-image-name">Giselle Braid Ring</h3>
-                            <p class="perfect-image-description">$3,200</p>
-                        </div>
+            </div>
+            <div class="perfect-image-container">
+                <img src="https://framerusercontent.com/images/eDeZMhDxUIxduheOKXsm7cQUdOo.jpg" alt="Jewelry Category 2" class="perfect-category-image">
+                <img src="https://framerusercontent.com/images/IjQ4Cn5zDm1LBvh7g4n5DvjhAvQ.jpg" alt="Jewelry Category 2 Hover" class="perfect-hover-image">
+                <div class="perfect-image-text">
+                    <div class="diamond-container">
+                        <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" class="diamond-icon">
+                            <g color="var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53))" weight="duotone">
+                                <path d="M229.67,133.62l-96,96a7.94,7.94,0,0,1-11.24,0l-96-96a7.94,7.94,0,0,1,0-11.24l96.05-96a7.94,7.94,0,0,1,11.24,0l96,96.05A7.94,7.94,0,0,1,229.67,133.62Z" opacity="0.2"></path>
+                                <path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path>
+                            </g>
+                        </svg>
+                        <span class="diamond-text">Gold.Diamond</span>
+                    </div>
+                    <div class="name-price-container">
+                        <h3 class="perfect-image-name">Giselle Braid Ring</h3>
+                        <p class="perfect-image-description">$3,200</p>
                     </div>
                 </div>
-
-                <div class="perfect-image-container">
-                    <img src="https://framerusercontent.com/images/wUuDiv2oNiz8rixgFHE5reyWc.jpg" alt="Jewelry Category 3" class="perfect-category-image">
-                    <img src="https://framerusercontent.com/images/AduUhHDcKJ16Eex3ZPCXoFE00.jpg" alt="Jewelry Category 3 Hover" class="perfect-hover-image">
-                
-                    <div class="perfect-image-text">
-                        <div class="diamond-container">
-                            <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" class="diamond-icon">
-                                <g color="var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53))" weight="duotone">
-                                    <path d="M229.67,133.62l-96,96a7.94,7.94,0,0,1-11.24,0l-96-96a7.94,7.94,0,0,1,0-11.24l96.05-96a7.94,7.94,0,0,1,11.24,0l96,96.05A7.94,7.94,0,0,1,229.67,133.62Z" opacity="0.2"></path>
-                                    <path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path>
-                                </g>
-                            </svg>
-                            <span class="diamond-text">Gold</span>
-                        </div>
-                        <div class="name-price-container">
-                            <h3 class="perfect-image-name">Luna Hoops</h3>
-                            <p class="perfect-image-description">$1,200</p>
-                        </div>
+            </div>
+            <div class="perfect-image-container">
+                <img src="https://framerusercontent.com/images/wUuDiv2oNiz8rixgFHE5reyWc.jpg" alt="Jewelry Category 3" class="perfect-category-image">
+                <img src="https://framerusercontent.com/images/AduUhHDcKJ16Eex3ZPCXoFE00.jpg" alt="Jewelry Category 3 Hover" class="perfect-hover-image">
+                <div class="perfect-image-text">
+                    <div class="diamond-container">
+                        <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" class="diamond-icon">
+                            <g color="var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53))" weight="duotone">
+                                <path d="M229.67,133.62l-96,96a7.94,7.94,0,0,1-11.24,0l-96-96a7.94,7.94,0,0,1,0-11.24l96.05-96a7.94,7.94,0,0,1,11.24,0l96,96.05A7.94,7.94,0,0,1,229.67,133.62Z" opacity="0.2"></path>
+                                <path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path>
+                            </g>
+                        </svg>
+                        <span class="diamond-text">Gold</span>
+                    </div>
+                    <div class="name-price-container">
+                        <h3 class="perfect-image-name">Luna Hoops</h3>
+                        <p class="perfect-image-description">$1,200</p>
                     </div>
                 </div>
-
-                <div class="perfect-image-container">
-                    <img src="https://framerusercontent.com/images/cxlNWWOwLPRXiYp0dvQ4gEPTpKI.jpg" alt="Jewelry Category 4" class="perfect-category-image">
-                    <img src="https://framerusercontent.com/images/RdPlePlljmGipPR0CMx817NY4VQ.jpg" alt="Jewelry Category 4 Hover" class="perfect-hover-image">
-                
-                    <div class="perfect-image-text">
-                        <div class="diamond-container">
-                            <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" class="diamond-icon">
-                                <g color="var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53))" weight="duotone">
-                                    <path d="M229.67,133.62l-96,96a7.94,7.94,0,0,1-11.24,0l-96-96a7.94,7.94,0,0,1,0-11.24l96.05-96a7.94,7.94,0,0,1,11.24,0l96,96.05A7.94,7.94,0,0,1,229.67,133.62Z" opacity="0.2"></path>
-                                    <path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path>
-                                </g>
-                            </svg>
-                            <span class="diamond-text">Gold</span>
-                        </div>
-                        <div class="name-price-container">
-                            <h3 class="perfect-image-name">Isla Stack Ring</h3>
-                            <p class="perfect-image-description">$1,980</p>
-                        </div>
+            </div>
+            <div class="perfect-image-container">
+                <img src="https://framerusercontent.com/images/cxlNWWOwLPRXiYp0dvQ4gEPTpKI.jpg" alt="Jewelry Category 4" class="perfect-category-image">
+                <img src="https://framerusercontent.com/images/RdPlePlljmGipPR0CMx817NY4VQ.jpg" alt="Jewelry Category 4 Hover" class="perfect-hover-image">
+                <div class="perfect-image-text">
+                    <div class="diamond-container">
+                        <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" class="diamond-icon">
+                            <g color="var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53))" weight="duotone">
+                                <path d="M229.67,133.62l-96,96a7.94,7.94,0,0,1-11.24,0l-96-96a7.94,7.94,0,0,1,0-11.24l96.05-96a7.94,7.94,0,0,1,11.24,0l96,96.05A7.94,7.94,0,0,1,229.67,133.62Z" opacity="0.2"></path>
+                                <path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path>
+                            </g>
+                        </svg>
+                        <span class="diamond-text">Gold</span>
+                    </div>
+                    <div class="name-price-container">
+                        <h3 class="perfect-image-name">Isla Stack Ring</h3>
+                        <p class="perfect-image-description">$1,980</p>
                     </div>
                 </div>
-
-                <div class="perfect-image-container">
-                    <img src="https://framerusercontent.com/images/RBIuO9zwH6DRL7he4gSzIc3xLM8.jpg" alt="Jewelry Category 6" class="perfect-category-image">
-                    <img src="https://framerusercontent.com/images/tVshHOZXB2oOHwVGN9GI6jPtpzs.jpg" alt="Jewelry Category 6 Hover" class="perfect-hover-image">
-                 
-                    <div class="perfect-image-text">
-                        <div class="diamond-container">
-                            <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" class="diamond-icon">
-                                <g color="var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53))" weight="duotone">
-                                    <path d="M229.67,133.62l-96,96a7.94,7.94,0,0,1-11.24,0l-96-96a7.94,7.94,0,0,1,0-11.24l96.05-96a7.94,7.94,0,0,1,11.24,0l96,96.05A7.94,7.94,0,0,1,229.67,133.62Z" opacity="0.2"></path>
-                                    <path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path>
-                                </g>
-                            </svg>
-                            <span class="diamond-text">Gold</span>
-                        </div>
-                        <div class="name-price-container">
-                            <h3 class="perfect-image-name">Nora Petite Ring	</h3>
-                            <p class="perfect-image-description">$2,750</p>
-                        </div>
+            </div>
+            <div class="perfect-image-container">
+                <img src="https://framerusercontent.com/images/RBIuO9zwH6DRL7he4gSzIc3xLM8.jpg" alt="Jewelry Category 6" class="perfect-category-image">
+                <img src="https://framerusercontent.com/images/tVshHOZXB2oOHwVGN9GI6jPtpzs.jpg" alt="Jewelry Category 6 Hover" class="perfect-hover-image">
+                <div class="perfect-image-text">
+                    <div class="diamond-container">
+                        <svg width="21" height="21" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" class="diamond-icon">
+                            <g color="var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53))" weight="duotone">
+                                <path d="M229.67,133.62l-96,96a7.94,7.94,0,0,1-11.24,0l-96-96a7.94,7.94,0,0,1,0-11.24l96.05-96a7.94,7.94,0,0,1,11.24,0l96,96.05A7.94,7.94,0,0,1,229.67,133.62Z" opacity="0.2"></path>
+                                <path d="M235.33,116.72,139.28,20.66a16,16,0,0,0-22.56,0l-96,96.06a16,16,0,0,0,0,22.56l96.05,96.06h0a16,16,0,0,0,22.56,0l96.05-96.06a16,16,0,0,0,0-22.56ZM128,224h0L32,128,128,32,224,128Z"></path>
+                            </g>
+                        </svg>
+                        <span class="diamond-text">Gold</span>
+                    </div>
+                    <div class="name-price-container">
+                        <h3 class="perfect-image-name">Nora Petite Ring</h3>
+                        <p class="perfect-image-description">$2,750</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="navigation-arrows">
+            <img src="left.svg" alt="Previous" class="nav-arrow left-arrow">
+            <img src="right.svg" alt="Next" class="nav-arrow right-arrow">
+        </div>
+    </div>
+</section>
 
-    <script>
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-        const container = document.getElementById('imageContainers');
-        const scrollContainer = container.parentElement;
+<script>
+const container = document.getElementById('imageContainers');
+const images = container.querySelectorAll('.perfect-image-container');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
+let currentIndex = 0;
 
-        // Mouse drag scrolling
-        scrollContainer.addEventListener('mousedown', (e) => {
-            isDown = true;
-            scrollContainer.style.cursor = 'grabbing';
-            startX = e.pageX - scrollContainer.offsetLeft;
-            scrollLeft = scrollContainer.scrollLeft;
-            e.preventDefault();
+function updateImages() {
+    if (window.innerWidth <= 768) {
+        images.forEach((img, index) => {
+            img.classList.toggle('active', index === currentIndex);
         });
+    } else {
+        images.forEach(img => img.classList.add('active'));
+        container.style.transform = 'translateX(0)';
+    }
+}
 
-        scrollContainer.addEventListener('mouseleave', () => {
-            isDown = false;
-            scrollContainer.style.cursor = 'grab';
+function scrollToImage(index) {
+    if (window.innerWidth <= 768) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
         });
+    } else {
+        const imageWidth = images[0].offsetWidth + 45; // Image width + gap
+        container.style.transform = `translateX(-${index * imageWidth}px)`;
+    }
+}
 
-        scrollContainer.addEventListener('mouseup', () => {
-            isDown = false;
-            scrollContainer.style.cursor = 'grab';
-        });
+leftArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    scrollToImage(currentIndex);
+});
 
-        scrollContainer.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - scrollContainer.offsetLeft;
-            const walk = (x - startX) * 2;
-            scrollContainer.scrollLeft = scrollLeft - walk;
-        });
+rightArrow.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    scrollToImage(currentIndex);
+});
 
-        // Mouse wheel scrolling for horizontal movement
-        scrollContainer.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            scrollContainer.scrollLeft += e.deltaY;
-        });
-
-        // Touch support for mobile
-        let touchStartX = 0;
-        let touchScrollLeft = 0;
-
-        scrollContainer.addEventListener('touchstart', (e) => {
-            touchStartX = e.touches[0].clientX;
-            touchScrollLeft = scrollContainer.scrollLeft;
-        });
-
-        scrollContainer.addEventListener('touchmove', (e) => {
-            e.preventDefault();
-            const touchX = e.touches[0].clientX;
-            const walk = (touchStartX - touchX) * 2;
-            scrollContainer.scrollLeft = touchScrollLeft + walk;
-        });
-    </script>
-
-
+window.addEventListener('resize', updateImages);
+updateImages();
+</script>
 
 
 
