@@ -22,8 +22,7 @@
   
     }
 
-
-    .full-image-section {
+        .full-image-section {
             width: 100vw;
             height: 100vh;
             overflow: hidden;
@@ -739,7 +738,16 @@
                 pointer-events: none !important;
             }
         }
-.content-section {
+
+
+
+
+
+
+
+
+
+  .content-section {
     width: 100vw;
     height: 909px;
     display: flex;
@@ -749,33 +757,33 @@
     box-sizing: border-box;
     background: linear-gradient(180deg, rgb(250, 249, 247) 0%, rgba(168, 121, 54, 0.27) 100%);
     position: relative;
-}
+  }
 
-.left-column-image {
+  .left-column-image {
     width: 50%;
     height: 709px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.left-column-image img {
+  .left-column-image img {
     display: block;
     width: 100%;
     height: 100%;
     border-radius: inherit;
     object-position: 52.1% 92.1%;
     object-fit: cover;
-}
+  }
 
-.right-column-text {
+  .right-column-text {
     width: 50%;
     padding-left: 3%;
     display: flex;
     flex-direction: column;
-}
+  }
 
-.legacy-title {
+  .legacy-title {
     font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
     font-size: 70px;
     line-height: 1.2em;
@@ -784,9 +792,9 @@
     text-align: left;
     margin-bottom: 10px;
     margin-top: -120px;
-}
+  }
 
-.elegance-subtitle {
+  .elegance-subtitle {
     font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
     font-size: 70px;
     font-style: italic;
@@ -794,9 +802,9 @@
     color: #000000;
     text-align: right;
     margin-bottom: 10px;
-}
+  }
 
-.jewelry-description {
+  .jewelry-description {
     font-family: "Outfit", sans-serif;
     font-size: 18px;
     font-weight: 300;
@@ -807,18 +815,18 @@
     width: 700px;
     margin-top: 140px;
     line-height: 1.5em;
-}
+  }
 
-.button-container {
+  .button-container {
     display: flex;
     justify-content: space-between;
     width: 620px;
     gap: 20px;
     margin-left: 60px;
     margin-top: -290px;
-}
+  }
 
-.shop-button {
+  .shop-button {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -829,9 +837,9 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-}
+  }
 
-.shop-button::before {
+  .shop-button::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -843,15 +851,15 @@
     transform: translateX(-50%);
     transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
     z-index: -1;
-}
+  }
 
-.shop-button:hover::before {
+  .shop-button:hover::before {
     width: 200%;
     height: 200%;
     bottom: -50%;
-}
+  }
 
-.story-button {
+  .story-button {
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -863,9 +871,9 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-}
+  }
 
-.story-button::before {
+  .story-button::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -877,31 +885,33 @@
     transform: translateX(-50%);
     transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
     z-index: -1;
-}
+  }
 
-.story-button:hover::before {
+  .story-button:hover::before {
     width: 200%;
     height: 200%;
     bottom: -50%;
-}
+  }
 
-.bottom-right-image {
+  .bottom-right-image {
     position: absolute;
     bottom: 60px;
     right: 45%;
     width: 198px;
     height: 239px;
     z-index: 2;
-}
+  }
 
-.bottom-right-image img {
+  .bottom-right-image img {
     display: block;
     width: 100%;
     height: 100%;
     border-radius: inherit;
     object-position: center center;
     object-fit: cover;
-}
+  }
+
+
 
 
 
@@ -2456,7 +2466,8 @@
 <body>
 
 
-  <section class="full-image-section">
+
+    <section class="full-image-section">
         <img 
             decoding="async"
             sizes="100vw"
@@ -2606,7 +2617,7 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="category.html" style="text-decoration: none;" class="navs-item">GEMSTONE</a></li>
+                <li><a href="gemstone.html" style="text-decoration: none;" class="navs-item">GEMSTONE</a></li>
                 <li><a href="custom.html" style="text-decoration: none;" class="navs-item">CUSTOM</a></li>
                 <li><a href="about.html" style="text-decoration: none;" class="navs-item">ABOUT</a></li>
             </ul>
@@ -2623,30 +2634,7 @@
             <use href="https://framerusercontent.com/images/dDUgJERkQxFipFZLHZqS9aQFC8.svg#svgView(viewBox(0,0,24,24))"></use>
         </svg>
     </section>
-
-    <section class="content-section">
-        <div class="left-column-image">
-            <img src="https://framerusercontent.com/images/9k3Y3lD39oUqL0iZm4o8G0.jpg" alt="Left Column Image">
-        </div>
-        <div class="right-column-text">
-            <h2 class="legacy-title">Legacy of</h2>
-            <h2 class="elegance-subtitle">Elegance</h2>
-            <p class="jewelry-description">
-                At Grand Jewelers, we believe that every piece of jewelry tells a story — one of love, commitment, and timeless beauty. 
-                Our curated collections are crafted with precision and passion, blending traditional artistry with modern sophistication. 
-                From sparkling diamonds to vibrant gemstones, each creation is designed to celebrate life’s most precious moments. 
-                Discover the perfect piece that resonates with your unique journey.
-            </p>
-            <div class="button-container">
-                <button class="shop-button">Shop Now</button>
-                <button class="story-button">Our Story</button>
-            </div>
-        </div>
-        <div class="bottom-right-image">
-            <img src="https://framerusercontent.com/images/SV7v2G4C3fOyxBu1e5gqOwc.jpg" alt="Bottom Right Image">
-        </div>
-    </section>
-
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const toggle = document.querySelector('.menu-toggle');
@@ -2684,6 +2672,13 @@
             }
         });
     </script>
+
+
+
+
+
+
+
 
 
 <section class="content-section">
