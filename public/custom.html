@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <title>Grand Jewelers</title>
   <style>
@@ -39,163 +40,166 @@
      top:0;
 }
 
-.navsbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(rgba(255, 255, 255, 0.94) 0%, rgba(189, 188, 187, 0.33) 73%, rgba(255, 255, 255, 0) 100%);
-    box-shadow: 0 0.517525px 2.58762px -0.625px rgba(0, 0, 0, 0.06),
-                0 1.56943px 7.84714px -1.25px rgba(0, 0, 0, 0.06),
-                0 4.14872px 20.7436px -1.875px rgba(0, 0, 0, 0.06),
-                0 13px 65px -2.5px rgba(0, 0, 0, 0.06);
-    padding: 20px 20px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 10;
-}
-
-  @keyframes slideInFromTop {
-    from {
-      transform: translateY(-100%);
-      opacity: 0;
+    .navsbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(rgba(255, 255, 255, 0.94) 0%, rgba(189, 188, 187, 0.33) 73%, rgba(255, 255, 255, 0) 100%);
+      box-shadow: 0 0.517525px 2.58762px -0.625px rgba(0, 0, 0, 0.06),
+                  0 1.56943px 7.84714px -1.25px rgba(0, 0, 0, 0.06),
+                  0 4.14872px 20.7436px -1.875px rgba(0, 0, 0, 0.06),
+                  0 13px 65px -2.5px rgba(0, 0, 0, 0.06);
+      padding: 20px 20px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+      animation: slideInFromTop 1s ease-out forwards;
     }
-    to {
-      transform: translateY(0);
-      opacity: 1;
+
+    @keyframes slideInFromTop {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
-  }
 
-  .logos {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 0px;
-  }
-
-  .logos-image {
-    width: 78px;
-    height: 78px;
-    object-fit: cover;
-  }
-
-  .logos-text {
-    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
-    font-size: 37px;
-    font-weight: 500;
-    margin: 0;
-  }
-
-  .navs-icons {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 15px;
-  }
-
-  .navs-icon {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-  }
-
-  .navs-links {
-    list-style: none;
-    display: flex;
-    gap: 60px;
-    margin: 20px 0 0 0;
-    padding: 0;
-    justify-content: center;
-    position: relative;
-  }
-
-  .navs-item {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    letter-spacing: -0.01em;
-    line-height: 2em;
-    color: rgb(68, 68, 68);
-    text-decoration: none;
-    padding: 5px 10px;
-    position: relative;
-  }
-
-  .navs-item:hover::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));
-  }
-
-  .dropdown {
-    position: relative;
-  }
-
-  .dropbtn {
-    cursor: pointer;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    top: 100%;
-    left: 0;
-  }
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .dropdown-item {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 2em;
-    color: rgb(68, 68, 68);
-    text-decoration: none;
-    display: block;
-    padding: 5px 10px;
-  }
-
-  .dropdown-item:hover {
-    background-color: #f1f1f1;
-  }
-
-  .content {
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: black;
-    z-index: 10;
-    animation: slideInFromBottom 1s ease-out 0.3s forwards;
-    opacity: 0;
-  }
-
-  @keyframes slideInFromBottom {
-    from {
-      transform: translate(-50%, 100%);
-      opacity: 0;
+    .logos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
     }
-    to {
+
+    .logos-image {
+      width: 78px;
+      height: 78px;
+      object-fit: cover;
+    }
+
+    .logos-text {
+      font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+      font-size: 37px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .navs-icons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .navs-icon {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .navs-links {
+      list-style: none;
+      display: flex;
+      gap: 60px;
+      margin: 20px 0 0 0;
+      padding: 0;
+      justify-content: center;
+      position: relative;
+    }
+
+    .navs-item {
+      font-family: "Outfit", "Outfit Placeholder", sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 2em;
+      color: rgb(68, 68, 68);
+      text-decoration: none;
+      padding: 5px 10px;
+      position: relative;
+    }
+
+    .navs-item:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: rgb(168, 121, 53);
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      top: 100%;
+      left: 0;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-item {
+      font-family: "Outfit", "Outfit Placeholder", sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      line-height: 2em;
+      color: rgb(68, 68, 68);
+      text-decoration: none;
+      display: block;
+      padding: 5px 10px;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f1f1f1;
+    }
+
+    .content {
+      position: absolute;
+      top: 70%;
+      left: 50%;
       transform: translate(-50%, -50%);
-      opacity: 1;
+      text-align: center;
+      color: black;
+      z-index: 10;
+      animation: slideInFromBottom 1s ease-out 0.3s forwards;
+      opacity: 0;
     }
-  }
 
- .main-heading {
+    @keyframes slideInFromBottom {
+      from {
+        transform: translate(-50%, 100%);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+
+     .main-heading {
     font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
     font-size: 42px;
     font-weight: 600;
@@ -203,371 +207,425 @@
     color: rgb(250, 249, 247);
 }
 
-  .highlights {
-    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
-    font-size: 42px;
-    font-weight: 600;
-    font-style: italic;
-    color: rgb(0, 0, 0);
-  }
-
-  .shop-buttons {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    border: none;
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    cursor: pointer;
-    margin-top: 10px;
-    width: 150px;
-    height: 55px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-
-  .shop-buttons::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background-color: rgb(168, 121, 53);
-    transform: translateX(-50%);
-    transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
-    z-index: -1;
-  }
-
-  .shop-buttons:hover::before {
-    width: 200%;
-    height: 200%;
-    bottom: -50%;
-  }
-
-  /* Engagement Rings Hover Container */
-  .engagement-container {
-    display: none;
-    position: absolute;
-    width: 190px;
-    height: 195px;
-    background-color: var(--token-3ee5b690-c0bb-49a1-b890-e023ee4070ef, rgb(250, 249, 247));
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    opacity: 1;
-    z-index: 1000;
-    top: 100%;
-    left: 0;
-    padding: 10px;
-  }
-
-  .dropdown:hover .engagement-container {
-    display: block;
-  }
-
-  .engagement-container h3 {
-    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0em;
-    line-height: 1.2em;
-    text-align: left;
-    color: #000000;
-    margin: 0 0 10px 10px;
-  }
-
-  .engagement-columns {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-
-  .engagement-column {
-    flex: 1;
-  }
-
-  .engagement-item {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-  }
-
-  .engagement-item svg {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-  }
-
-  .engagement-item span {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: -0.01em;
-    line-height: 1.5em;
-    text-align: left;
-    color: var(--extracted-r6o4lv, var(--token-059802a5-8ff4-4818-b1a2-de7ee479bdb8, rgb(89, 89, 89)));
-  }
-
-  .engagement-item span:hover {
-    color: var(--extracted-r6o4lv, var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53)));
-  }
-
-  /* Wedding Rings Hover Container */
-  .wedding-container {
-    display: none;
-    position: absolute;
-    width: 190px;
-    height: 195px;
-    background-color: var(--token-3ee5b690-c0bb-49a1-b890-e023ee4070ef, rgb(250, 249, 247));
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    opacity: 1;
-    z-index: 1000;
-    top: 100%;
-    right: 0;
-    padding: 10px;
-    text-align: left;
-  }
-
-  .dropdown:hover .wedding-container {
-    display: block;
-  }
-
-  .wedding-container h3 {
-    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0em;
-    line-height: 1.2em;
-    text-align: left;
-    color: #000000;
-    margin: 0 0 10px 0;
-  }
-
-  .wedding-column {
-    margin-top: 10px;
-  }
-
-  .wedding-item {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    margin: 5px 0;
-  }
-
-  .wedding-item svg {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-  }
-
-  .wedding-item span {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: -0.01em;
-    line-height: 1.5em;
-    text-align: left;
-    color: var(--extracted-r6o4lv, var(--token-059802a5-8ff4-4818-b1a2-de7ee479bdb8, rgb(89, 89, 89)));
-  }
-
-  .wedding-item span:hover {
-    color: var(--extracted-r6o4lv, var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53)));
-  }
-
-  /* Jewelry Hover Container */
-  .jewelry-container {
-    display: none;
-    position: absolute;
-    width: 160px;
-    height: 155px;
-    background-color: var(--token-3ee5b690-c0bb-49a1-b890-e023ee4070ef, rgb(250, 249, 247));
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-    opacity: 1;
-    z-index: 1000;
-    top: 100%;
-    right: 0;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .dropdown:hover .jewelry-container {
-    display: block;
-  }
-
-  .jewelry-container h3 {
-    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0em;
-    line-height: 1.2em;
-    text-align: center;
-    color: #000000;
-    margin: 0 0 10px 0;
-  }
-
-  .jewelry-column {
-    margin-top: 10px;
-  }
-
-  .jewelry-item {
-    display: flex;
-    align-items: left;
-    justify-content: left;
-    margin: 5px 0;
-  }
-
-  .jewelry-item svg {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-  }
-
-  .jewelry-item span {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: -0.01em;
-    line-height: 1.5em;
-    text-align: left;
-    color: var(--extracted-r6o4lv, var(--token-059802a5-8ff4-4818-b1a2-de7ee479bdb8, rgb(89, 89, 89)));
-  }
-
-  .jewelry-item span:hover {
-    color: var(--extracted-r6o4lv, var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53)));
-  }
-
-  /* Search Icon Click */
-  .search-input {
-    display: none;
-    position: absolute;
-    top: 20px;
-    right: 60px;
-    width: 150px;
-    height: 24px;
-    background-color: white;
-    border: none;
-    padding: 0 10px;
-  }
-
-  .navs-icon:nth-child(1):active ~ .search-input {
-    display: block;
-  }
-
-  /* User Icon Hover */
-  .user-container {
-    display: none;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    width: 200px;
-    height: 200px;
-    background-color: white;
-    z-index: 1000;
-  }
-
-  .navs-icon:nth-child(2):hover + .user-container {
-    display: block;
-  }
-
-  .user-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Updated SVG and Positioning */
-  .engagement-item svg,
-  .wedding-item svg,
-  .jewelry-item svg {
-    background-image: url('https://framerusercontent.com/images/dDUgJERkQxFipFZLHZqS9aQFC8.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-  }
-
-  .engagement-container,
-  .wedding-container,
-  .jewelry-container {
-    position: absolute;
-    top: calc(100% + 5px);
-    left: 0;
-    transform: none;
-  }
-
-  .navs-links li {
-    position: relative;
-  }
-
-  /* Responsive Design for Smaller Devices */
-  @media (max-width: 768px) {
-    .navsbar {
-      padding: 15px 15px 5px;
+    .highlights {
+      font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+      font-size: 42px;
+      font-weight: 600;
+      font-style: italic;
+      color: rgb(0, 0, 0);
     }
 
-    .logos-image {
-      width: 50px;
-      height: 50px;
-    }
-
-    .logos-text {
-      font-size: 24px;
-    }
-
-   .menu-toggle {
-      display: block;
-      width: 30px;
-      height: 20px;
+    .shop-buttons {
+      background-color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+      border: none;
+      font-family: "Outfit", "Outfit Placeholder", sans-serif;
       cursor: pointer;
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      z-index: 1001;
+      margin-top: 10px;
+      width: 180px;
+      height: 55px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
     }
 
-    .navs-links {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: var(--token-3ee5b690-c0bb-49a1-b890-e023ee4070ef, rgb(250, 249, 247));
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        z-index: 3000;
-        padding: 80px 20px 20px;
-        margin: 0;
-        gap: 20px;
-        align-items: center;
-        justify-content: flex-start;
-        animation: slideInFromLeft 0.3s ease-out forwards;
-         overflow-y: auto; 
+    .shop-buttons::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background-color: rgb(168, 121, 53);
+      transform: translateX(-50%);
+      transition: width 0.6s ease-in-out, height 0.6s ease-in-out;
+      z-index: -1;
+    }
+
+    .shop-buttons:hover::before {
+      width: 200%;
+      height: 200%;
+      bottom: -50%;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    /* Engagement Rings Hover Container */
+    .engagement-container {
+      display: none;
+      position: absolute;
+      width: 190px;
+      height: 195px;
+      background-color: rgb(250, 249, 247);
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      opacity: 0;
+      z-index: 1000;
+      top: calc(100% + 5px);
+      left: 0;
+      padding: 10px;
+      animation: jumpUp 0.4s ease-out forwards;
+    }
+
+    .dropdown:hover .engagement-container {
+      display: block;
+    }
+
+    .engagement-container h3 {
+      font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0em;
+      line-height: 1.2em;
+      text-align: left;
+      color: #000000;
+      margin: 0 0 10px 10px;
+    }
+
+    .engagement-columns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .engagement-column {
+      flex: 1;
+    }
+
+    .engagement-item {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+    }
+
+    .engagement-item svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    .engagement-item span {
+      font-family: "Outfit", "Outfit Placeholder", sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.5em;
+      text-align: left;
+      color: rgb(89, 89, 89);
+    }
+
+    .engagement-item span:hover {
+      color: rgb(168, 121, 53);
+    }
+
+    /* Wedding Rings Hover Container */
+    .wedding-container {
+      display: none;
+      position: absolute;
+      width: 190px;
+      height: 195px;
+      background-color: rgb(250, 249, 247);
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      opacity: 0;
+      z-index: 1000;
+      top: calc(100% + 5px);
+      right: 0;
+      padding: 10px;
+      text-align: left;
+      animation: jumpUp 0.4s ease-out forwards;
+    }
+
+    .dropdown:hover .wedding-container {
+      display: block;
+    }
+
+    .wedding-container h3 {
+      font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0em;
+      line-height: 1.2em;
+      text-align: left;
+      color: #000000;
+      margin: 0 0 10px 0;
+    }
+
+    .wedding-columns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .wedding-column {
+      flex: 1;
+    }
+
+    .wedding-item {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+    }
+
+    .wedding-item svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    .wedding-item span {
+      font-family: "Outfit", "Outfit Placeholder", sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.5em;
+      text-align: left;
+      color: rgb(89, 89, 89);
+    }
+
+    .wedding-item span:hover {
+      color: rgb(168, 121, 53);
+    }
+
+    /* Gemstone Hover Container */
+    .gemstone-container {
+      display: none;
+      position: absolute;
+      width: 190px;
+      height: 250px;
+      background-color: rgb(250, 249, 247);
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      opacity: 0;
+      z-index: 1000;
+      top: calc(100% + 5px);
+      right: 0;
+      padding: 10px;
+      text-align: left;
+      animation: jumpUp 0.4s ease-out forwards;
+    }
+
+    .dropdown:hover .gemstone-container {
+      display: block;
+    }
+
+    .gemstone-container h3 {
+      font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0em;
+      line-height: 1.2em;
+      text-align: left;
+      color: #000000;
+      margin: 0 0 10px 0;
+    }
+
+    .gemstone-columns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .gemstone-column {
+      flex: 1;
+    }
+
+    .gemstone-item {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+    }
+
+    .gemstone-item img {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      object-fit: contain;
+    }
+
+    .gemstone-item span {
+      font-family: "Outfit", "Outfit Placeholder", sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.5em;
+      text-align: left;
+      color: rgb(89, 89, 89);
+    }
+
+    .gemstone-item span:hover {
+      color: rgb(168, 121, 53);
+    }
+
+    /* Jewelry Hover Container */
+    .jewelry-container {
+      display: none;
+      position: absolute;
+      width: 160px;
+      height: 155px;
+      background-color: rgb(250, 249, 247);
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      opacity: 0;
+      z-index: 1000;
+      top: calc(100% + 5px);
+      right: 0;
+      padding: 10px;
+      text-align: center;
+      animation: jumpUp 0.4s ease-out forwards;
+    }
+
+    .dropdown:hover .jewelry-container {
+      display: block;
+    }
+
+    .jewelry-container h3 {
+      font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0em;
+      line-height: 1.2em;
+      text-align: center;
+      color: #000000;
+      margin: 0 0 10px 0;
+    }
+
+    .jewelry-column {
+      margin-top: 10px;
+    }
+
+    .jewelry-item {
+      display: flex;
+      align-items: left;
+      justify-content: left;
+      margin: 5px 0;
+    }
+
+    .jewelry-item svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    .jewelry-item span {
+      font-family: "Outfit", "Outfit Placeholder", sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.5em;
+      text-align: left;
+      color: rgb(89, 89, 89);
+    }
+
+    .jewelry-item span:hover {
+      color: rgb(168, 121, 53);
+    }
+
+    /* Search Icon Click */
+    .search-input {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 60px;
+      width: 150px;
+      height: 24px;
+      background-color: white;
+      border: none;
+      padding: 0 10px;
+    }
+
+    .navs-icon:nth-child(1):active ~ .search-input {
+      display: block;
+    }
+
+    /* User Icon Hover */
+    .user-container {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      z-index: 1000;
+    }
+
+    .navs-icon:nth-child(2):hover + .user-container {
+      display: block;
+    }
+
+    .user-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Updated SVG and Positioning */
+    .engagement-item svg,
+    .wedding-item svg,
+    .jewelry-item svg {
+      background-image: url('https://framerusercontent.com/images/dDUgJERkQxFipFZLHZqS9aQFC8.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    .engagement-container,
+    .wedding-container,
+    .jewelry-container,
+    .gemstone-container {
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0;
+      transform: none;
+    }
+
+    .navs-links li {
+      position: relative;
+    }
+
+    /* Jumping Animation for Dropdowns */
+    @keyframes jumpUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Dropdown Icon Styling */
+    .dropdown-icon {
+      display: none;
+      margin-left: 8px;
+      font-size: 16px;
+      color: rgb(68, 68, 68);
+      cursor: pointer;
+    }
+
+    .dropdown-icon:hover {
+      color: rgb(168, 121, 53);
+    }
+
+    /* Responsive Design for Smaller Devices */
+    @media (max-width: 768px) {
+      .navsbar {
+        padding: 15px 15px 5px;
       }
 
-  .navs-links.active {
-  display: flex;
-  animation: slideInFromLeft 0.4s ease-out forwards;
-
-}
-
-
-      .navs-item {
-        font-size: 18px;
-        font-weight: 400;
-        padding: 15px;
-        text-align: center;
-        border-bottom: none;
-        color: rgb(68, 68, 68);
-        transition: color 0.3s ease;
+      .logos-image {
+        width: 50px;
+        height: 50px;
       }
 
-      .navs-item:hover {
-        color: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));
-      }
-
-      .navs-item:hover::after {
-        display: none;
+      .logos-text {
+        font-size: 24px;
       }
 
       .navs-icons {
@@ -581,21 +639,9 @@
         height: 20px;
       }
 
-      @keyframes slideInFromLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-
       .search-input {
         top: 15px;
-        right: 100px;
+        right: 180px;
         width: 120px;
       }
 
@@ -635,30 +681,200 @@
         transform: rotate(-45deg) translate(7px, -7px);
       }
 
+      .navs-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(250, 249, 247);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 3000;
+        padding: 80px 20px 20px;
+        margin: 0;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+        animation: slideInFromLeft 0.4s ease-out forwards;
+        overflow-y: auto;
+      }
 
-    .engagement-container,
-    .wedding-container,
-    .jewelry-container {
-      display: none !important;
+      .navs-links.active {
+        display: flex;
+      }
+
+      .navs-item {
+        font-size: 18px;
+        font-weight: 400;
+        padding: 15px;
+        text-align: center;
+        border-bottom: none;
+        color: rgb(68, 68, 68);
+        transition: color 0.3s ease;
+        cursor: pointer;
+      }
+
+      .navs-item:hover {
+        color: rgb(168, 121, 53);
+      }
+
+      .navs-item:hover::after {
+        display: none;
+      }
+
+      .dropbtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+
+      .dropdown-icon {
+        display: inline-block;
+      }
+
+      @keyframes slideInFromLeft {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .dropdown:hover .engagement-container,
+      .dropdown:hover .wedding-container,
+      .dropdown:hover .jewelry-container,
+      .dropdown:hover .gemstone-container {
+        display: none;
+      }
+
+      .engagement-container,
+      .wedding-container,
+      .jewelry-container,
+      .gemstone-container {
+        display: none;
+        position: static;
+        width: 100%;
+        height: auto;
+        background-color: rgb(245, 245, 245);
+        box-shadow: none;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 8px;
+        animation: slideDown 0.3s ease-out forwards;
+      }
+
+      .dropdown.active .engagement-container,
+      .dropdown.active .wedding-container,
+      .dropdown.active .jewelry-container,
+      .dropdown.active .gemstone-container {
+        display: block;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .engagement-container h3,
+      .wedding-container h3,
+      .jewelry-container h3,
+      .gemstone-container h3 {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 16px;
+        color: rgb(51, 51, 51);
+      }
+
+      .engagement-columns,
+      .wedding-columns,
+      .jewelry-column,
+      .gemstone-columns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .engagement-item,
+      .wedding-item,
+      .jewelry-item,
+      .gemstone-item {
+        justify-content: center;
+        width: 100%;
+        padding: 10px 0;
+        transition: background-color 0.2s ease;
+      }
+
+      .engagement-item:hover,
+      .wedding-item:hover,
+      .jewelry-item:hover,
+      .gemstone-item:hover {
+        background-color: rgba(168, 121, 53, 0.1);
+        border-radius: 4px;
+      }
+
+      .engagement-item span,
+      .wedding-item span,
+      .jewelry-item span,
+      .gemstone-item span {
+        font-size: 16px;
+        text-align: center;
+        color: rgb(68, 68, 68);
+      }
+
+      .engagement-item span:hover,
+      .wedding-item span:hover,
+      .jewelry-item span:hover,
+      .gemstone-item span:hover {
+        color: rgb(168, 121, 53);
+      }
+
+      .gemstone-item img {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+        object-fit: contain;
+      }
+
+      .main-heading {
+        font-size: 28px;
+      }
+
+      .highlights {
+        font-size: 28px;
+      }
+
+      .content {
+        display: block;
+      }
+
+      .menu-toggle.active ~ .content,
+      .menu-toggle.active ~ .content-section {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+
+      body.menu-open .content,
+      body.menu-open .content-section {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
     }
-
-    .main-heading {
-      font-size: 28px;
-    }
-
-    .highlights {
-      font-size: 28px;
-    }
-
-    .shop-buttons {
-      width: 120px;
-      height: 45px;
-    }
-  }
-
-
-
-
 
 
   
@@ -2085,167 +2301,296 @@
    <section class="full-image-section">
     <video src="https://framerusercontent.com/assets/MxZ4Lbbb5P3hR2nDBcNqOnLZOE.mp4" loop preload="auto" muted playsinline class="full-background-image" autoplay></video>
 
-  <nav class="navsbar">
+    <nav class="navsbar">
       <a href="index.html" style="text-decoration: none; color: inherit;">
-                <div class="logos">
-                    <img src="https://framerusercontent.com/images/7WFOrGoUHJ5YwY59bnTpeAlG86g.png" alt="Grand Jewelers Logo" class="logos-image">
-                    <h1 class="logos-text">GRAND JEWELLERS</h1>
+        <div class="logos">
+          <img src="https://framerusercontent.com/images/7WFOrGoUHJ5YwY59bnTpeAlG86g.png" alt="Grand Jewelers Logo" class="logos-image">
+          <h1 class="logos-text">GRAND JEWELLERS</h1>
+        </div>
+      </a>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="navs-icons">
+        <svg class="navs-icon" viewBox="0 0 24 24" fill="rgb(68, 68, 68)">
+          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+        <a href="create-account.html" style="text-decoration: none;">
+          <svg class="navs-icon" viewBox="0 0 24 24" fill="rgb(68, 68, 68)">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+          </svg>
+        </a>
+        <a href="cart.html" style="text-decoration: none;">
+          <svg class="navs-icon" viewBox="0 0 24 24" fill="rgb(68, 68, 68)">
+            <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-1-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+          </svg>
+        </a>
+        <input type="text" class="search-input" placeholder="Search...">
+      </div>
+      <ul class="navs-links">
+        <li class="dropdown">
+          <div class="dropbtn">
+            <a href="category.html" style="text-decoration: none;" class="navs-item">ENGAGEMENT RINGS</a>
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </div>
+          <div class="engagement-container">
+            <h3>Engagement Ring Styles</h3>
+            <div class="engagement-columns">
+              <div class="engagement-column">
+                <div class="engagement-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Solitaire</span></a>
                 </div>
-            </a>
-    <div class="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <div class="navs-icons">
-      <svg class="navs-icon" viewBox="0 0 24 24" fill="rgb(68, 68, 68)">
-        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-      </svg>
-      <a href="create-account.html" style="text-decoration: none;">
-        <svg class="navs-icon" viewBox="0 0 24 24" fill="rgb(68, 68, 68)">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-        </svg>
-      </a>
-      <a href="cart.html" style="text-decoration: none;">
-        <svg class="navs-icon" viewBox="0 0 24 24" fill="rgb(68, 68, 68)">
-          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-1-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
-        </svg>
-      </a>
-      <input type="text" class="search-input" placeholder="Search...">
-    </div>
-    <ul class="navs-links">
-      <li class="dropdown">
-        <a href="category.html" style="text-decoration: none;" class="navs-item dropbtn">ENGAGEMENT RINGS</a>
-        <div class="engagement-container">
-          <h3>Engagement Ring Styles</h3>
-          <div class="engagement-columns">
-            <div class="engagement-column">
-              <div class="engagement-item">
-                <svg><use href="#custom-svg"></use></svg>
-                <a href="sub-category.html" style="text-decoration: none;"><span>Solitaire</span></a>
+                <div class="engagement-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="product-page.html" style="text-decoration: none;"><span>Halo</span></a>
+                </div>
+                <div class="engagement-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Vintage</span></a>
+                </div>
+                <div class="engagement-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Sidestone</span></a>
+                </div>
+                <div class="engagement-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-product-page.html" style="text-decoration: none;"><span>Three-stone</span></a>
+                </div>
               </div>
-              <div class="engagement-item">
-                <svg><use href="#custom-svg"></use></svg>
-                <a href="product-page.html" style="text-decoration: none;"><span>Halo</span></a>
-              </div>
-              <div class="engagement-item">
-                <svg><use href="#custom-svg"></use></svg>
-                <a href="sub-category.html" style="text-decoration: none;"><span>Vintage</span></a>
-              </div>
-              <div class="engagement-item">
-                <svg><use href="#custom-svg"></use></svg>
-                <a href="sub-category.html" style="text-decoration: none;"><span>Sidestone</span></a>
-              </div>
-              <div class="engagement-item">
-                <svg><use href="#custom-svg"></use></svg>
-                <a href="sub-product-page.html" style="text-decoration: none;"><span>Three-stone</span></a>
-              </div>
-            </div>
-            <div class="engagement-column">
-              <div class="engagement-item">
-                <svg><use href="#custom-svg"></use></svg>
-                <a href="sub-category.html" style="text-decoration: none;"><span>Designer</span></a>
-              </div>
-              <div class="engagement-item">
-                <svg><use href="#custom-svg"></use></svg>
-                <a href="sub-category.html" style="text-decoration: none;"><span>Rose Gold</span></a>
-              </div>
-              <div class="engagement-item">
-                <svg><use href="#custom-svg"></use></svg>
-                <a href="sub-category.html" style="text-decoration: none;"><span>Unique</span></a>
-              </div>
-              <div class="engagement-item">
-                <svg><use href="#custom-svg"></use></svg>
-                <a href="sub-category.html" style="text-decoration: none;"><span>Gemstone</span></a>
-              </div>
-              <div class="engagement-item">
-                <svg><use href="#custom-svg"></use></svg>
-                <a href="sub-category.html" style="text-decoration: none;"><span>Men's Engagement</span></a>
+              <div class="engagement-column">
+                <div class="engagement-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Designer</span></a>
+                </div>
+                <div class="engagement-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Rose Gold</span></a>
+                </div>
+                <div class="engagement-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Unique</span></a>
+                </div>
+                <div class="engagement-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Gemstone</span></a>
+                </div>
+                <div class="engagement-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Men's Engagement</span></a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </li>
-      <li class="dropdown">
-        <a href="category.html" style="text-decoration: none;" class="navs-item dropbtn">WEDDING RINGS</a>
-        <div class="wedding-container">
-          <h3>Wedding Ring Styles</h3>
-          <div class="wedding-column">
-            <div class="wedding-item">
-              <svg><use href="#custom-svg"></use></svg>
-              <a href="sub-category.html" style="text-decoration: none;"><span>Solitaire</span></a>
-            </div>
-            <div class="wedding-item">
-              <svg><use href="#custom-svg"></use></svg>
-              <a href="sub-category.html" style="text-decoration: none;"><span>Designer</span></a>
-            </div>
-            <div class="wedding-item">
-              <svg><use href="#custom-svg"></use></svg>
-              <a href="sub-category.html" style="text-decoration: none;"><span>Rose Gold</span></a>
-            </div>
-            <div class="wedding-item">
-              <svg><use href="#custom-svg"></use></svg>
-              <a href="sub-category.html" style="text-decoration: none;"><span>Unique</span></a>
-            </div>
-            <div class="wedding-item">
-              <svg><use href="#custom-svg"></use></svg>
-              <a href="sub-category.html" style="text-decoration: none;"><span>Gemstone</span></a>
-            </div>
-            <div class="wedding-item">
-              <svg><use href="#custom-svg"></use></svg>
-              <a href="sub-category.html" style="text-decoration: none;"><span>Men's Engagement</span></a>
+        </li>
+        <li class="dropdown">
+          <div class="dropbtn">
+            <a href="category.html" style="text-decoration: none;" class="navs-item">WEDDING RINGS</a>
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </div>
+          <div class="wedding-container">
+            <div class="wedding-columns">
+              <div class="wedding-column">
+                <h3>Women's</h3>
+                <div class="wedding-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Diamond</span></a>
+                </div>
+                <div class="wedding-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Rose Gold</span></a>
+                </div>
+                <div class="wedding-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Yellow Gold</span></a>
+                </div>
+                <div class="wedding-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>White Gold</span></a>
+                </div>
+              </div>
+              <div class="wedding-column">
+                <h3>Men's</h3>
+                <div class="wedding-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Tungsten</span></a>
+                </div>
+                <div class="wedding-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Titanium</span></a>
+                </div>
+                <div class="wedding-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Rose Gold</span></a>
+                </div>
+                <div class="wedding-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>Yellow Gold</span></a>
+                </div>
+                <div class="wedding-item">
+                  <svg><use href="#custom-svg"></use></svg>
+                  <a href="sub-category.html" style="text-decoration: none;"><span>White Gold</span></a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </li>
-      <li class="dropdown">
-        <a href="category.html" style="text-decoration: none;" class="navs-item dropbtn">JEWELRY</a>
-        <div class="jewelry-container">
-          <div class="jewelry-column">
-            <div class="jewelry-item">
-              <svg><use href="#custom-svg"></use></svg>
-              <a href="sub-category.html" style="text-decoration: none;"><span>Rings</span></a>
-            </div>
-            <div class="jewelry-item">
-              <svg><use href="#custom-svg"></use></svg>
-              <a href="sub-category.html" style="text-decoration: none;"><span>Earrings</span></a>
-            </div>
-            <div class="jewelry-item">
-              <svg><use href="#custom-svg"></use></svg>
-              <a href="sub-category.html" style="text-decoration: none;"><span>Bracelets</span></a>
-            </div>
-            <div class="jewelry-item">
-              <svg><use href="#custom-svg"></use></svg>
-              <a href="sub-category.html" style="text-decoration: none;"><span>Chains</span></a>
+        </li>
+        <li class="dropdown">
+          <div class="dropbtn">
+            <a href="category.html" style="text-decoration: none;" class="navs-item">JEWELRY</a>
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </div>
+          <div class="jewelry-container">
+            <div class="jewelry-column">
+              <div class="jewelry-item">
+                <svg><use href="#custom-svg"></use></svg>
+                <a href="sub-category.html" style="text-decoration: none;"><span>Rings</span></a>
+              </div>
+              <div class="jewelry-item">
+                <svg><use href="#custom-svg"></use></svg>
+                <a href="sub-category.html" style="text-decoration: none;"><span>Earrings</span></a>
+              </div>
+              <div class="jewelry-item">
+                <svg><use href="#custom-svg"></use></svg>
+                <a href="sub-category.html" style="text-decoration: none;"><span>Bracelets</span></a>
+              </div>
+              <div class="jewelry-item">
+                <svg><use href="#custom-svg"></use></svg>
+                <a href="sub-category.html" style="text-decoration: none;"><span>Chains</span></a>
+              </div>
             </div>
           </div>
-        </div>
-      </li>
-      <li><a href="category.html" style="text-decoration: none;" class="navs-item">GEMSTONE</a></li>
-      <li><a href="category.html" style="text-decoration: none;" class="navs-item">CUSTOM</a></li>
-      <li><a href="category.html" style="text-decoration: none;" class="navs-item">ABOUT</a></li>
-    </ul>
-    <div class="user-container"><img src="https://via.placeholder.com/200" alt="User Image"></div>
-  </nav>
- <div class="content">
+        </li>
+        <li class="dropdown">
+          <div class="dropbtn">
+            <a href="ring-diamond-settings.html" style="text-decoration: none;" class="navs-item">GEMSTONE</a>
+            <i class="fas fa-chevron-down dropdown-icon"></i>
+          </div>
+          <div class="gemstone-container">
+            <div class="gemstone-columns">
+              <div class="gemstone-column">
+                <h3>Gemstone Color</h3>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/2vUBFGPIYgrV8mssEQpZwazog4.jpg" alt="Gemstone Icon">
+                  <a href="ring-diamond-settings.html" style="text-decoration: none;"><span>Sapphire</span></a>
+                </div>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/oCSFUw6EmgmTGVj7tSa6lYKUeSA.jpg" alt="Gemstone Icon">
+                  <a href="ring-diamond-settings.html" style="text-decoration: none;"><span>Emerald</span></a>
+                </div>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/lcc29yw91JV8cKzz5OcB0Ss1YqU.jpg" alt="Gemstone Icon">
+                  <a href="ring-diamond-settings.html" style="text-decoration: none;"><span>Moissanite</span></a>
+                </div>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/3qt31fQXBODHAm2rs1Tf5CA1tA.jpg" alt="Gemstone Icon">
+                  <a href="ring-diamond-settings.html" style="text-decoration: none;"><span>Aquamarine</span></a>
+                </div>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/M7Seqsg037da00NN6gxHT0XRKY.jpg" alt="Gemstone Icon">
+                  <a href="ring-diamond-settings.html" style="text-decoration: none;"><span>Alexandrite</span></a>
+                </div>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/yqJDLKxwPFLUYu2qDjnkzeeBaA.jpg" alt="Gemstone Icon">
+                  <a href="ring-diamond-settings.html" style="text-decoration: none;"><span>Ruby</span></a>
+                </div>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/CmhDudJy3j9Lbc1Kjaz7KIkFM.jpg" alt="Gemstone Icon">
+                  <a href="ring-diamond-settings.html" style="text-decoration: none;"><span>Morgantie</span></a>
+                </div>
+              </div>
+              <div class="gemstone-column">
+                <h3>Gemstone Jewelry</h3>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/dDUgJERkQxFipFZLHZqS9aQFC8.svg" alt="Gemstone Icon">
+                  <a href="ring-gemstone-setting.html" style="text-decoration: none;"><span>Rings</span></a>
+                </div>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/a8MxtaLjVRvmH7LK6qncW3Fcck.svg" alt="Gemstone Icon">
+                  <a href="ring-gemstone-setting.html" style="text-decoration: none;"><span>Earrings</span></a>
+                </div>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/1toRKmzQBtlbFxt6Vpma7a9pdE.svg" alt="Gemstone Icon">
+                  <a href="ring-gemstone-setting.html" style="text-decoration: none;"><span>Bracelets</span></a>
+                </div>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/a8MxtaLjVRvmH7LK6qncW3Fcck.svg" alt="Gemstone Icon">
+                  <a href="ring-gemstone-setting.html" style="text-decoration: none;"><span>Necklaces</span></a>
+                </div>
+                <div class="gemstone-item">
+                  <img src="https://framerusercontent.com/images/dDUgJERkQxFipFZLHZqS9aQFC8.svg" alt="Gemstone Icon">
+                  <a href="ring-gemstone-setting.html" style="text-decoration: none;"><span>Pendants</span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="custom.html" style="text-decoration: none;" class="navs-item">CUSTOM</a></li>
+        <li><a href="about.html" style="text-decoration: none;" class="navs-item">ABOUT</a></li>
+      </ul>
+      <div class="user-container"><img src="https://via.placeholder.com/200" alt="User Image"></div>
+    </nav>
+   <div class="content">
         <h2 class="main-heading">Design the Jewelry You</h2>
         <h2 class="main-heading">Dream Of</h2>
         <a href="custom-design.html" style="text-decoration: none;">
   <button class="shop-buttons">Bring Your Design</button>
 </a>
     </div>
-  <svg id="custom-svg" style="display:none;">
-    <use href="https://framerusercontent.com/images/dDUgJERkQxFipFZLHZqS9aQFC8.svg#svgView(viewBox(0,0,24,24))"></use>
-  </svg>
-</section>
+    <svg id="custom-svg" style="display:none;">
+      <use href="https://framerusercontent.com/images/dDUgJERkQxFipFZLHZqS9aQFC8.svg#svgView(viewBox(0,0,24,24))"></use>
+    </svg>
+  </section>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.navs-links');
+      const dropdowns = document.querySelectorAll('.dropdown');
 
-<script>
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    this.classList.toggle('active');
-    document.querySelector('.navs-links').classList.toggle('active');
-  });
-</script>
+      // Toggle mobile menu
+      toggle.addEventListener('click', function () {
+        toggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+        // Close all dropdowns when menu is toggled
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('active');
+        });
+      });
 
+      // Handle dropdown toggle on smaller devices
+      if (window.innerWidth <= 768) {
+        dropdowns.forEach(dropdown => {
+          const dropbtn = dropdown.querySelector('.dropbtn');
+          const navLink = dropbtn.querySelector('.navs-item');
+          const dropdownIcon = dropbtn.querySelector('.dropdown-icon');
+
+          // Click on nav item text to navigate
+          navLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.location.href = navLink.href;
+          });
+
+          // Click on dropdown icon to toggle dropdown
+          dropdownIcon.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            // Close other dropdowns
+            dropdowns.forEach(otherDropdown => {
+              if (otherDropdown !== dropdown) {
+                otherDropdown.classList.remove('active');
+              }
+            });
+            // Toggle current dropdown
+            dropdown.classList.toggle('active');
+          });
+        });
+      }
+    });
+  </script>
 
 
   
