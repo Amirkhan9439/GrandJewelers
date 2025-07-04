@@ -25,8 +25,7 @@
     }
 
 
-
-    .full-image-section {
+     .full-image-section {
       width: 100vw;
       height: auto;
       min-height: 150px;
@@ -768,16 +767,9 @@
       }
     }
 
-  
-
-
-
-
-
-        /* Breadcrumb Section */
-        .breadcrumb-section {
+  .breadcrumb-section {
             width: 100vw;
-            height: 215px;
+            height: 60px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -800,33 +792,7 @@
             margin-left: 40px;
         }
 
-        .cart-waiting {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-            margin-left: 40px;
-        }
-
-        .cart-waiting-svg {
-            width: 61px;
-            height: 61px;
-            margin-right: 10px;
-        }
-
-        .cart-waiting-text {
-            font-family: "Cormorant Garamond", serif;
-            font-size: 30px;
-            font-weight: 500;
-            letter-spacing: 0em;
-            line-height: 1.2em;
-            color: #000000;
-            text-align: center;
-        }
-
-        .cart-waiting-text em {
-            font-style: italic;
-            font-weight: 500;
-        }
+      
 
         /* Responsive Design for Smaller Devices */
         @media (max-width: 768px) {
@@ -846,22 +812,78 @@
                 text-align: center;
             }
 
-            .cart-waiting {
-                margin: 10px 0 0 0;
-                justify-content: center;
-            }
-
-            .cart-waiting-svg {
-                width: 40px;
-                height: 40px;
-                margin-right: 8px;
-            }
-
-            .cart-waiting-text {
-                font-size: 20px;
-                text-align: center;
-            }
+       
         }
+
+.option-section {
+    width: 100vw;
+    height: 111px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    background: rgb(250, 249, 247);
+}
+
+.option-button {
+    width: 420px;
+    height: 67px;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    margin-left: 0px;
+}
+
+.option-button.center {
+    background: rgba(168, 121, 54, 0.27);
+    margin-left: 60px;
+}
+
+.option-button-content {
+    display: flex;
+    align-items: center;
+    margin-left: 110px;
+}
+
+.option-button span {
+    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.2em;
+    text-align: left;
+    color: #000000;
+}
+
+
+
+@media (max-width: 768px) {
+    .option-section {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .option-button {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 250px;
+        background: transparent;
+    }
+
+    .option-button.center {
+        margin-left: 0;
+        margin-bottom: 10px;
+        background: rgba(168, 121, 54, 0.27);
+    }
+
+    .option-button-content {
+        margin-left: 20px;
+    }
+
+}
 
 .perfect-category {
     width: 100vw;
@@ -1958,7 +1980,7 @@
         }
 
 
-        .content-section {
+.content-section {
     width: 100vw;
     height: 909px;
     display: flex;
@@ -1992,18 +2014,7 @@
     padding-left: 3%;
     display: flex;
     flex-direction: column;
-}
-
-.diamond-title {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 2.5px;
-    line-height: 1.5em;
-    text-align: left;
-    color: rgb(136, 136, 136);
-    margin-top: 20px;
-    margin-left: 0px;
+    margin-top: -40px;
 }
 
 .ring-name {
@@ -2014,23 +2025,6 @@
     line-height: 1.5em;
     text-align: left;
     margin-left: 0px;
-}
-
-.rating {
-    display: flex;
-    align-items: center;
-    margin-left: 0px;
-}
-
-.rating-count {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.4em;
-    text-align: justify;
-    color: var(--token-f2363b37-57e2-4f81-bdd5-3fdf58795824, rgb(150, 150, 150));
-    margin-left: 10px;
 }
 
 .price-section {
@@ -2044,147 +2038,6 @@
     font-family: "Outfit", "Outfit Placeholder", sans-serif;
     font-size: 25px;
     font-weight: 300;
-}
-
-.setting-price {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.4em;
-    text-align: justify;
-    margin-left: 10px;
-}
-
-.composition-title {
-    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
-    font-size: 25px;
-    font-weight: 500;
-    letter-spacing: -0.5px;
-    line-height: 1.5em;
-    text-align: left;
-    margin-left: 0px;
-    margin-top: 20px;
-}
-
-.description {
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.4em;
-    text-align: justify;
-    color: var(--token-f2363b37-57e2-4f81-bdd5-3fdf58795824, rgb(150, 150, 150));
-    margin-left: 0px;
-    margin-top: 10px;
-}
-
-.colors-title {
-    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
-    font-size: 25px;
-    font-weight: 500;
-    letter-spacing: -0.5px;
-    line-height: 1.5em;
-    text-align: left;
-    margin-left: 0px;
-    margin-top: 20px;
-}
-
-.color-swatches {
-    display: flex;
-    gap: 10px;
-    margin-left: 0px;
-    margin-top: 10px;
-}
-
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.color-swatch {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.tooltiptext {
-    visibility: hidden;
-    width: auto;
-    background-color: white;
-    color: rgb(71, 71, 71);
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.4em;
-    text-align: justify;
-    border-radius: 6px;
-    padding: 5px 10px;
-    position: absolute;
-    z-index: 1;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    transition: opacity 0.3s;
-    white-space: nowrap;
-}
-
-.tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: white transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}
-
-.karats-title {
-    font-family: "Cormorant Garamond", "Cormorant Garamond Placeholder", serif;
-    font-size: 25px;
-    font-weight: 500;
-    letter-spacing: -0.5px;
-    line-height: 1.5em;
-    text-align: left;
-    margin-left: 0px;
-    margin-top: 20px;
-}
-
-.karat-options {
-    display: flex;
-    gap: 10px;
-    margin-left: 0px;
-    margin-top: 10px;
-}
-
-.karat-option {
-    width: 50px;
-    height: 50px;
-    border: 0.5px solid rgb(150, 150, 150);
-    background-color: rgba(0, 0, 0, 0);
-    opacity: 1;
-    box-shadow: rgba(143, 133, 133, 0.07) 0px 0px 0px 0px, rgba(143, 133, 133, 0.08) 0px 0px 0px 0px, rgba(143, 133, 133, 0.09) 0px 0px 0px 0px, rgba(143, 133, 133, 0.13) 0px 0px 0px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Outfit", "Outfit Placeholder", sans-serif;
-    font-size: 14px;
-    font-weight: 300;
-    text-align: center;
-    transition: border-color 0.3s ease;
-}
-
-.karat-option:hover {
-    border-color: gold;
 }
 
 .button-container {
@@ -2216,6 +2069,122 @@
     width: 300px;
     height: 55px;
 }
+
+@media (max-width: 768px) {
+    .content-section {
+        width: 100vw;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background: rgb(250, 249, 247);
+    }
+
+    .left-column-image {
+        width: 80%;
+        height: auto;
+        max-height: 300px;
+        margin-bottom: 20px;
+    }
+
+    .left-column-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .right-column-text {
+        width: 80%;
+        padding-left: 0;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .ring-name {
+        font-size: 28px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .right-column-text > div[style*="width: 80%; height: 1px"] {
+        width: 100%;
+        margin: 15px auto;
+    }
+
+    .right-column-text > div[style*="font-family: 'Outfit'"] {
+        font-size: 12px;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .right-column-text > div[style*="font-family: 'Cormorant Garamond'"] {
+        font-size: 16px;
+        margin: 15px 0 8px;
+        text-align: center;
+    }
+
+    .right-column-text > div[style*="display: flex; justify-content: space-between"] {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin: 10px 0;
+    }
+
+    .right-column-text > div[style*="display: flex; justify-content: space-between"] > span {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .right-column-text > div[style*="font-family: 'Inter'"] {
+        font-size: 7px;
+        margin: 8px 0;
+        text-align: center;
+    }
+
+    .right-column-text > div[style*="position: relative; width: 600px"] {
+        width: 100%;
+        max-width: 300px;
+        margin: 10px 0;
+    }
+
+    .right-column-text > div[style*="position: relative; width: 600px"] > input {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .right-column-text > div[style*="position: relative; width: 600px"] > span {
+        font-size: 10px;
+    }
+
+    .right-column-text > div[style*="margin-top: 60px; margin-bottom:120px"] {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 20px 0 30px;
+    }
+
+    .right-column-text > div[style*="margin-top: 60px; margin-bottom:120px"] > span {
+        font-size: 20px;
+    }
+
+    .button-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0px;
+        gap: 10px;
+    }
+
+    .shop-button, .story-button {
+        width: 200px;
+        height: 45px;
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+
+
+
 
 .sec {
     width: 100%;
@@ -2298,130 +2267,7 @@
 
 /* Responsive Design for Smaller Devices */
 @media (max-width: 768px) {
-    .content-section {
-        height: auto;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .left-column-image {
-        width: 100%;
-        height: 354px; /* 50% of original 709px */
-    }
-
-    .left-column-image img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .right-column-text {
-        width: 100%;
-        padding-left: 0;
-        align-items: center;
-    }
-
-    .diamond-title {
-        font-size: 14px;
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .ring-name {
-        font-size: 28px;
-        text-align: center;
-    }
-
-    .rating {
-        justify-content: center;
-    }
-
-    .rating svg {
-        width: 15px;
-        height: 15px;
-    }
-
-    .rating-count {
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .price-section {
-        justify-content: center;
-        margin-top: 15px;
-    }
-
-    .price {
-        font-size: 20px;
-    }
-
-    .setting-price {
-        font-size: 10px;
-    }
-
-    .composition-title {
-        font-size: 20px;
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .description {
-        font-size: 14px;
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .colors-title {
-        font-size: 20px;
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .color-swatches {
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .color-swatch {
-        width: 40px;
-        height: 40px;
-    }
-
-    .tooltiptext {
-        font-size: 12px;
-    }
-
-    .karats-title {
-        font-size: 20px;
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    .karat-options {
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .karat-option {
-        width: 40px;
-        height: 40px;
-        font-size: 12px;
-    }
-
-    .button-container {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 15px;
-        gap: 10px;
-    }
-
-    .shop-button, .story-button {
-        width: 200px;
-        height: 45px;
-        font-size: 14px;
-    }
-
+   
     .sec {
         height: auto;
         flex-direction: column;
@@ -2466,6 +2312,7 @@
   </style>
 </head>
 <body>
+
 
  <section class="full-image-section">
     <nav class="navsbar">
@@ -2754,10 +2601,38 @@
 
 
 
- <section class="breadcrumb-section">
-    <div class="breadcrumb-text">Home / Diamond / Rings / Elara Diamond Ring</div>
+<section class="breadcrumb-section">
+    <div class="breadcrumb-text">Home / Engagement Rings / Solitaire / Elara Diamond Ring</div>
    
   </section>
+
+
+  <section class="option-section">
+    <div class="option-button">
+        <div class="option-button-content">
+            <span style="color: green; font-size: 24px; margin-right: 10px;">✔</span>
+            <span>Choose a setting</span>
+        </div>
+    </div>
+    <div class="option-button ">
+        <div class="option-button-content">
+            <span style="color: green; font-size: 24px; margin-right: 10px;">✔</span>
+            <span>Choose Diamond</span>
+        </div>
+    </div>
+  
+    <div class="option-button center">
+        <div class="option-button-content">
+            <svg style="margin-right: 20px;" xmlns="http://www.w3.org/2000/svg" width="19.261" height="27" fill="none" overflow="visible">
+                <g>
+                    <path d="M 11.439 7.79 L 15.825 3.373 L 14.151 0 L 5.111 0 L 3.436 3.373 L 7.823 7.79 C 3.374 8.645 0 12.584 0 17.307 C 0 22.652 4.321 27 9.631 27 C 14.941 27 19.261 22.652 19.261 17.307 C 19.261 12.584 15.887 8.645 11.439 7.79 M 10.255 5.704 L 8.999 5.704 L 8.342 3.723 L 10.912 3.723 L 10.255 5.704 M 13.607 0.871 L 14.59 2.852 L 11.89 2.852 L 11.566 0.871 L 13.607 0.871 M 11.834 3.723 L 14.247 3.723 L 12.279 5.704 L 11.178 5.704 L 11.834 3.723 M 8.582 0.871 L 10.678 0.871 L 11.003 2.852 L 8.252 2.852 L 8.582 0.871 M 5.655 0.871 L 7.695 0.871 L 7.365 2.852 L 4.671 2.852 L 5.655 0.871 M 5.013 3.723 L 7.42 3.723 L 8.076 5.704 L 6.974 5.704 L 5.013 3.723 M 9.631 26.129 C 4.803 26.129 0.875 22.171 0.875 17.307 C 0.875 12.442 4.803 8.484 9.631 8.484 C 14.458 8.484 18.386 12.442 18.386 17.307 C 18.386 22.172 14.459 26.129 9.631 26.129" fill="rgb(0,0,0)" stroke-width="0.001" stroke="rgb(0,0,0)" stroke-miterlimit="10" stroke-dasharray=""></path>
+                    <path d="M 9.795 9.45 C 5.517 9.45 2.036 12.953 2.036 17.258 C 2.036 21.564 5.517 25.066 9.795 25.066 C 14.073 25.066 17.554 21.564 17.554 17.258 C 17.554 12.953 14.073 9.45 9.795 9.45 M 9.795 24.195 C 5.999 24.195 2.911 21.083 2.911 17.258 C 2.911 13.433 5.999 10.321 9.795 10.321 C 13.59 10.321 16.678 13.433 16.678 17.258 C 16.678 21.083 13.591 24.195 9.795 24.195" fill="rgb(0,0,0)" stroke-width="0.001" stroke="rgb(0,0,0)" stroke-miterlimit="10" stroke-dasharray=""></path>
+                </g>
+            </svg>
+            <span>Complete Ring</span>
+        </div>
+    </div>
+</section>
 
 
 
@@ -2775,59 +2650,62 @@
         />
     </div>
     <div class="right-column-text">
-        <div class="diamond-title">DIAMOND</div>
-        <div class="ring-name">Elara Diamond Ring</div>
-        <div class="rating">
-            <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24" style="width: 19px; height: 19px; fill: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));">
-                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24" style="width: 19px; height: 19px; fill: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));">
-                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24" style="width: 19px; height: 19px; fill: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));">
-                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24" style="width: 19px; height: 19px; fill: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));">
-                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
-            </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" focusable="false" viewBox="0 0 24 24" style="width: 19px; height: 19px; fill: var(--token-df820d39-6f00-4a62-b62b-d10f7c30703a, rgb(168, 121, 53));">
-                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
-            </svg>
-            <span class="rating-count">(32)</span>
+        <div class="ring-name">The Ring You Designed</div>
+        <div style="width: 80%; height: 1px; background-color: #d3d3d3; margin: 20px 0 20px 10px;"></div>
+        <div style="margin-left: 10px; font-family: 'Outfit', 'Outfit Placeholder', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.4em; text-align: justify; color: #969696; margin-bottom: 20px;">
+            The total carat weight of your ring is 3.08 ct.
         </div>
-        <div class="price-section">
-            <span class="price">$5,800</span>
-            <span class="setting-price">(Setting Price)</span>
+        <div style="margin-left: 10px; font-family: 'Cormorant Garamond', 'Cormorant Garamond Placeholder', serif; font-size: 20px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2em; text-align: left; color: #000000; margin-bottom: 10px;">
+            Settings
         </div>
-        <div class="composition-title">Composition</div>
-        <p class="description">An exquisite emerald-cut diamond, perfectly framed by a halo of shimmering pavé diamonds. Handcrafted with precision and set in luxurious white gold (or platinum), this design captures timeless elegance and brilliance.</p>
-        <div class="colors-title">Colors</div>
-        <div class="color-swatches">
-            <div class="tooltip">
-                <div class="color-swatch" style="background: radial-gradient(67% 25% at 50% 50%, rgba(255, 255, 255, 0.98) 50%, rgb(171, 171, 171) 100%); border-radius: 50%; width: 50px; height: 50px;"></div>
-                <span class="tooltiptext">White Gold</span>
-            </div>
-            <div class="tooltip">
-                <div class="color-swatch" style="background: radial-gradient(67% 25% at 50% 50%, rgba(242, 226, 160, 0.98) 50%, rgb(186, 164, 76) 100%); border-radius: 50%; width: 50px; height: 50px;"></div>
-                <span class="tooltiptext">Yellow Gold</span>
-            </div>
+        <div style="margin-left: 10px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: 'Outfit', 'Outfit Placeholder', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.4em; text-align: justify; color: #969696;">
+                18K Yellow Gold Elara Hidden Halo Diamond Engagement Ring
+            </span>
+            <span style="font-family: 'Outfit', 'Outfit Placeholder', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.4em; text-align: justify; color: #969696;">
+                $1,190
+            </span>
         </div>
-        <div class="karats-title">Karats</div>
-        <div class="karat-options">
-            <div class="karat-option">10K</div>
-            <div class="karat-option">14K</div>
-            <div class="karat-option">18K</div>
+        <div style="margin-left: 10px; font-family: 'Cormorant Garamond', 'Cormorant Garamond Placeholder', serif; font-size: 20px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2em; text-align: left; color: #000000; margin-top: 20px; margin-bottom: 10px;">
+            Diamond
+        </div>
+        <div style="margin-left: 10px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-family: 'Outfit', 'Outfit Placeholder', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.4em; text-align: justify; color: #969696;">
+                3.03 Carat Radiant Diamond
+            </span>
+            <span style="font-family: 'Outfit', 'Outfit Placeholder', sans-serif; font-size: 14px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.4em; text-align: justify; color: #969696;">
+                $30,010
+            </span>
+        </div>
+        <div style="margin-left: 10px; font-family: 'Inter', 'Inter Placeholder', sans-serif; font-size: 8px; font-weight: 300; letter-spacing: -0.02em; line-height: 1.2em; text-align: justify; color: #969696; margin-top: 10px;">
+            Super Ideal cut • I color • VS2 clarity
+        </div>
+        <div style="margin-left: 10px; font-family: 'Cormorant Garamond', 'Cormorant Garamond Placeholder', serif; font-size: 20px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.2em; text-align: left; color: #000000; margin-top: 20px; margin-bottom: 10px;">
+            Size
+        </div>
+        <div style="margin-left: 10px; position: relative; width: 600px;">
+            <input type="text" placeholder="Search" style="width: 100%; padding: 8px; font-family: 'Outfit', 'Outfit Placeholder', sans-serif; font-size: 14px; color: #969696; border: 1px solid #d3d3d3; border-radius: 4px;">
+            <span style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); font-size: 12px;">▼</span>
+        </div>
+        <div style="margin-left: 10px; display: flex; justify-content: space-between; align-items: center; margin-top: 60px; margin-bottom:120px;">
+            <span style="font-family: 'Outfit', 'Outfit Placeholder', sans-serif; font-size: 25px; font-weight: 300; letter-spacing: -0.02em; text-align: left;">
+                Ring Total
+            </span>
+            <span style="font-family: 'Outfit', 'Outfit Placeholder', sans-serif; font-size: 25px; font-weight: 300; letter-spacing: -0.02em; text-align: left;">
+                $31,200
+            </span>
         </div>
         <div class="button-container">
-           <a href="checkout.html" style="text-decoration: none;">
-  <button class="shop-button">Shop Now</button>
-</a>
-<a href="category.html" style="text-decoration: none;">
-  <button class="story-button">Our Story</button>
-</a>
+            <a href="checkout.html" style="text-decoration: none;">
+                <button class="shop-button">Shop Now</button>
+            </a>
+            <a href="category.html" style="text-decoration: none;">
+                <button class="story-button">Our Story</button>
+            </a>
         </div>
     </div>
 </section>
+
 
 <section class="sec">
     <div class="left-column">
